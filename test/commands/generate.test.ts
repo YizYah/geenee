@@ -16,18 +16,19 @@ import {expect, test} from '@oclif/test'
 // replace everything in this tests section when you modify your code.
 describe('generate', () => {
   test
-  .stdout()
-  .command(['generate', 'sampleCode', '-t', 'sampleTemplate', '-n'])
-  .it('runs generate with all args and flags', ctx => {
-    expect(ctx.stdout).to.contain('You have executed the generate command')
-  })
+    .stderr()
+    .command(['generate', '-t', 'nonExistentTemplate', '--noSetup'])
+    .catch(error => {
+      expect(error.message).to.contain('Missing 1 required arg')
+    })
+    .it('requires existing template')
 
   test
-  .stderr()
-  .command(['generate', 'sampleBadArgValue', '-t', 'sampleTemplate', '-n'])
-  .catch(error => {
-    expect(error.message).to.contain('bad arg value')
-  })
-  .it('requires proper args')
+    .stderr()
+    .command(['generate', 'nonExistentCodeBase', '-t', 'nonExistentTemplate', '--noSetup'])
+    .catch(error => {
+      expect(error.message).to.contain('no such file or directory')
+    })
+    .it('requires existing template')
 })
 /* ns__custom_end tests */

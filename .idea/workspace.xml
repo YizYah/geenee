@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbecf23c-021a-4b34-b922-56115e328dd8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/custom/data/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/custom/data/meta/ns.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/custom/settingsMenu-Quit.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/custom/settingsMenu-Static.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/custom/staticSettings.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta/custom.json" beforeDir="false" afterPath="$PROJECT_DIR$/meta/custom.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta/customCode.json" beforeDir="false" afterPath="$PROJECT_DIR$/meta/customCode.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta/ns.yml" beforeDir="false" afterPath="$PROJECT_DIR$/meta/ns.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oclif.manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/oclif.manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/fileGeneration/staticFiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/codeGeneration/fileGeneration/staticFiles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/commands/check.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/commands/check.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/commands/generate.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/commands/generate.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/commands/settings.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/commands/settings.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -43,6 +44,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -57,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610013937605</updated>
-      <workItem from="1610013938790" duration="18749000" />
+      <workItem from="1610013938790" duration="21310000" />
     </task>
     <servers />
   </component>

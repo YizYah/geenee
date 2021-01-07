@@ -10,6 +10,7 @@
     "posttest": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "testOnly": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   },
   "keywords": [
@@ -35,7 +36,6 @@
     "js-yaml": "^3.14.1",
     "jsonfile": "^6.1.0",
     "just-handlebars-helpers": "^1.0.18",
-    "lister": "^1.0.3",
     "listr": "^0.14.3",
     "magicalstrings": "0.0.10",
     "minimatch": "^3.0.4",
@@ -47,6 +47,7 @@
     "read-pkg": "^5.2.0",
     "resolve-dir-fixed": "^1.0.0",
     "semver": "^7.3.4",
+    "sinon": "^9.2.3",
     "sprintf-js": "^1.1.1",
     "traverse": "^0.6.6",
     "tslib": "^1.14.1",

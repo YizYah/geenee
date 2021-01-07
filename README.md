@@ -68,6 +68,7 @@ For an example, see [easy-oclif-cli](https://www.npmjs.com/package/easy-oclif-cl
 * [How](#how)
 * [Usage](#usage)
 * [Commands](#commands)
+* [Help](#help)
 <!-- tocstop -->
 
 [//]: # ( ns__custom_end toc )
@@ -105,6 +106,7 @@ USAGE
 * [`geenee generate CODE`](#geenee-generate-code)
 * [`geenee help [COMMAND]`](#geenee-help-command)
 * [`geenee pounce MODEL`](#geenee-pounce-model)
+* [`geenee settings CODE`](#geenee-settings-code)
 
 ## `geenee chase TEMPLATE`
 
@@ -210,6 +212,27 @@ EXAMPLE
 ```
 
 _See code: [src/commands/pounce.ts](https://github.com/YizYah/geenee/blob/v0.1.1/src/commands/pounce.ts)_
+
+## `geenee settings CODE`
+
+change your settings for the next generation
+
+```
+USAGE
+  $ geenee settings CODE
+
+ARGUMENTS
+  CODE  path to the code base
+
+OPTIONS
+  -h, --help  show CLI help
+
+EXAMPLE
+  $ geenee settings sampleCode
+  You have executed the settings command...
+```
+
+_See code: [src/commands/settings.ts](https://github.com/YizYah/geenee/blob/v0.1.1/src/commands/settings.ts)_
 <!-- commandsstop -->
 
 
@@ -222,6 +245,3 @@ _See code: [src/commands/pounce.ts](https://github.com/YizYah/geenee/blob/v0.1.1
 [//]: # ( ns__custom_end commands )
 
 [//]: # ( ns__end_section commandsSection )
-
-
-[1]: https://ns-flip.nostack.net/

@@ -2,46 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbecf23c-021a-4b34-b922-56115e328dd8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/custom/testing/checkDirForDiscrepancies.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/custom/testing/checkDirectories.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/custom/testing/checkGeneratedUnits.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/custom/testing/checkStaticFiles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/custom/testing/discrepanciesFound.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/custom/testing/ensureIgnoredExist.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/custom/testing/failsTests.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/custom/testing/initializeLogFile.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/custom/testing/logEntry.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/custom/testing/mergePackageJsons.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/custom/testing/moveOverIgnored.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copykat.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/START_OF_FILE.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/general/generic.hbs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/meta/custom.json" beforeDir="false" afterPath="$PROJECT_DIR$/meta/custom.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meta/customCode.json" beforeDir="false" afterPath="$PROJECT_DIR$/meta/customCode.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta/instructions.md" beforeDir="false" afterPath="$PROJECT_DIR$/meta/instructions.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meta/ns.yml" beforeDir="false" afterPath="$PROJECT_DIR$/meta/ns.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oclif.manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/oclif.manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample.ns.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/chase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/chase.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/fileGeneration/staticFiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/codeGeneration/fileGeneration/staticFiles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom/images/COPYKAT-GIF3.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom/templates/expandNsbbreviations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/templates/expandNsbbreviations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/standard/.editorconfig.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/standard/.gitattributes.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/standard/.github/workflows/main.yml.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/standard/.gitignore.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/standard/.npmrc.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/standard/index.js.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/standard/license.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/standard/readme.md.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/standard/test.js.hbs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610013937605</updated>
-      <workItem from="1610013938790" duration="14530000" />
+      <workItem from="1610013938790" duration="18749000" />
     </task>
     <servers />
   </component>

@@ -51,7 +51,6 @@ ${error}`)
         const pathString = `${templateDir}/static/${fileType}.hbs`
 
         try {
-          console.log(`about to loadFileTemplate for ${pathString}`)
           const fileTemplate = await loadFileTemplate(pathString, config)
 
           const {slug, specs} = instanceInfo

@@ -6,36 +6,6 @@ template:
   version: 1
 static:
   command:
-    pounce:
-      slug: pounce
-      specs:
-        description: specify a model code base and generate a template to build it
-        args:
-          - name: model
-            description: >-
-              path to a model code base from which you will generate your
-              template
-            required: true
-            hidden: false
-        flags:
-          - name: templateDir
-            type: string
-            char: t
-            description: path to the generator that you will build
-            required: false
-            hidden: false
-            multiple: false
-    chase:
-      slug: chase
-      specs:
-        description: >-
-          compare generated code to your model, changing both until you've
-          replicated the model with your template
-        args:
-          - name: template
-            description: the path to your template
-            required: true
-            hidden: false
     generate:
       slug: generate
       specs:
@@ -71,6 +41,15 @@ static:
         args:
           - name: code
             description: path to the code base to check
+            required: true
+            hidden: false
+    settings:
+      slug: settings
+      specs:
+        description: change your settings for the next generation
+        args:
+          - name: code
+            description: path to the code base
             required: true
             hidden: false
 starter: /home/yisroel/packages/geenee.starter

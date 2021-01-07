@@ -16,11 +16,11 @@ import {expect, test} from '@oclif/test'
 // replace everything in this tests section when you modify your code.
 describe('settings', () => {
   test
-    .stderr()
-    .command(['settings'])
-    .catch(error => {
-      expect(error.message).to.contain('Missing 1 required arg')
-    })
-    .it('requires existent code base')
+  .stderr()
+  .command(['settings'])
+  .catch(error => {
+    expect(error.message).to.contain('Missing 1 required arg')
+  })
+  .it('requires existent code base')
 })
 /* ns__custom_end tests */

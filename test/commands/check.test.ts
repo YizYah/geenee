@@ -16,11 +16,11 @@ import {expect, test} from '@oclif/test'
 // replace everything in this tests section when you modify your code.
 describe('check', () => {
   test
-    .stderr()
-    .command(['check', 'nonexistentFile'])
-    .catch(error => {
-      expect(error.message).to.contain('no such file or directory')
-    }).timeout(20000)
-    .it('requires existent code base')
+  .stderr()
+  .command(['check', 'nonexistentFile'])
+  .catch(error => {
+    expect(error.message).to.contain('no such file or directory')
+  }).timeout(20000)
+  .it('requires existent code base')
 })
 /* ns__custom_end tests */

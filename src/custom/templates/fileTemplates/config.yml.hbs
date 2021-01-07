@@ -1,0 +1,17 @@
+name: {{templateName}}
+version: 1.0
+category: {{category}}
+
+dirs:
+  custom: {{customDir}}
+
+format:
+  customFileFilter: '{{fileFilter}}'
+  defaultOpenComment: "/*"
+  defaultCloseComment: "*/"
+  openComment:
+    .md: "\n[//]: # ("
+    .yml: "#"
+  closeComment:
+    .md: ")"
+    .yml: "\n"

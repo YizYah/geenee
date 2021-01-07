@@ -1,0 +1,84 @@
+userClass: user
+codeName: MyApp
+template:
+  dir: /home/yisroel/ns/templates/ns-template-easy-oclif-cli
+  name: easy-oclif-cli
+  version: 1
+static:
+  command:
+    pounce:
+      slug: pounce
+      specs:
+        description: specify a model code base and generate a template to build it
+        args:
+          - name: model
+            description: >-
+              path to a model code base from which you will generate your
+              template
+            required: true
+            hidden: false
+        flags:
+          - name: templateDir
+            type: string
+            char: t
+            description: path to the generator that you will build
+            required: false
+            hidden: false
+            multiple: false
+    chase:
+      slug: chase
+      specs:
+        description: >-
+          compare generated code to your model, changing both until you've
+          replicated the model with your template
+        args:
+          - name: template
+            description: the path to your template
+            required: true
+            hidden: false
+    generate:
+      slug: generate
+      specs:
+        description: >-
+          generates code based on a template and a settings file. To set the
+          template, you need the template flag.
+        args:
+          - name: code
+            description: path to the code base to generate
+            required: true
+            hidden: false
+        flags:
+          - name: template
+            type: string
+            char: t
+            description: >-
+              Template directory. Will generate from the template, and will
+              override any prior template or template version used.
+            required: false
+          - name: noSetup
+            type: boolean
+            char: 'n'
+            description: >-
+              Do not update the startup routine (this is only relevant when the
+              template flag is also used). Saves a lot of time for a template
+              developer.
+    check:
+      slug: check
+      specs:
+        description: >-
+          checks that the code has been entered safely, meaning that
+          regeneration won't lose any changes
+        args:
+          - name: code
+            description: path to the code base to check
+            required: true
+            hidden: false
+starter: /home/yisroel/packages/geenee.starter
+general:
+  packageName: geenee
+  binName: geenee
+  author: YizYah
+  owner: YizYah
+  repositoryName: geenee
+  license: MIT
+  description: code regenerator. reapplies templates without losing custom changes

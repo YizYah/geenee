@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbecf23c-021a-4b34-b922-56115e328dd8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/custom/data/config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/custom/data/meta/ns.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/custom/settingsMenu-Quit.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/custom/settingsMenu-Static.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/custom/staticSettings.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meta/custom.json" beforeDir="false" afterPath="$PROJECT_DIR$/meta/custom.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meta/customCode.json" beforeDir="false" afterPath="$PROJECT_DIR$/meta/customCode.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oclif.manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/oclif.manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/commands/check.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/commands/check.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/commands/generate.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/commands/generate.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/commands/settings.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/commands/settings.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610013937605</updated>
-      <workItem from="1610013938790" duration="21310000" />
+      <workItem from="1610013938790" duration="22878000" />
     </task>
     <servers />
   </component>

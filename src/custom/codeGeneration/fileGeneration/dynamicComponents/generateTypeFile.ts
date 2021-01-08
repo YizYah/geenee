@@ -1,5 +1,5 @@
 import {contextForDynamic} from '../../handlebars/context/contextForDynamic'
-import {loadFileTemplate} from '../../../templates/loadFileTemplate'
+import {loadFileTemplate} from '../../loadFileTemplate'
 import {makeDirs} from '../makeDirs'
 import {registerHelpers} from '../../handlebars/registerHelpers'
 import {registerPartials} from '../../handlebars/registerPartials'

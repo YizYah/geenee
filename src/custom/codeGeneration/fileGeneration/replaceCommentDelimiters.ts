@@ -1,5 +1,5 @@
 import {Configuration} from 'magicalstrings'
-import {commentDelimiters} from '../../templates/commentDelimiters'
+import {commentDelimiters} from '../commentDelimiters'
 const {placeholders} = require('magicalstrings').constants
 
 const path = require('path')

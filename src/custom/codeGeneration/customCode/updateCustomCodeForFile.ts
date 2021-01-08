@@ -6,7 +6,7 @@ const {
 const {customLocationNewRegExString} = require('magicalstrings').constants.Regex.regExNewCustomLocation
 const {regExCleanupText} = require('magicalstrings').constants.Regex.regExCleanupText
 const {customCleanupRegExText} = require('magicalstrings').constants.Regex.regExCustomCleanup
-import {commentDelimiters} from '../../templates/commentDelimiters'
+import {commentDelimiters} from '../commentDelimiters'
 import {Configuration} from 'magicalstrings'
 
 export const fs = require('fs-extra')

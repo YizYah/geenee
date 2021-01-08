@@ -2,7 +2,7 @@ const {standardIgnored} = require('magicalstrings').constants
 import {NsInfo}  from 'magicalstrings'
 import {Schema} from 'magicalstrings'
 import {contextForStandard} from '../handlebars/context/contextForStandard'
-import {loadFileTemplate} from '../../templates/loadFileTemplate'
+import {loadFileTemplate} from '../loadFileTemplate'
 import {registerHelpers} from '../handlebars/registerHelpers'
 import {registerPartials} from '../handlebars/registerPartials'
 import {replaceCommentDelimiters} from './replaceCommentDelimiters'

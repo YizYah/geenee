@@ -4,7 +4,7 @@ const fs = require('fs-extra')
 
 import {NsInfo}  from 'magicalstrings'
 const {allCaps} = require('magicalstrings').inflections
-import {loadFileTemplate} from '../../templates/loadFileTemplate'
+import {loadFileTemplate} from '../loadFileTemplate'
 const {parseSpecName} = require('magicalstrings').constants.parseSpecName
 import {unitNameFromSpec} from './unitNameFromSpec'
 const {dirNames} = require('magicalstrings').constants

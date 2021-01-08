@@ -1,6 +1,6 @@
 import {registerPartials} from '../handlebars/registerPartials'
 import {registerHelpers} from '../handlebars/registerHelpers'
-import {loadFileTemplate} from '../../templates/loadFileTemplate'
+import {loadFileTemplate} from '../loadFileTemplate'
 const {fileNames} = require('magicalstrings').constants
 import {contextForStandard} from '../handlebars/context/contextForStandard'
 import {NsInfo}  from 'magicalstrings'

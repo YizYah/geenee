@@ -1,6 +1,6 @@
 const inquirer = require('inquirer')
 const {attention} = require('magicalstrings').constants.chalkColors
-import {regenerateCode} from '../../regenerateCode'
+import {regenerateCode} from '../codeGeneration/regenerateCode'
 
 export async function promptToGenerateCode(codeDir: string,) {
   const questions = [{
@@ -13,7 +13,9 @@ export async function promptToGenerateCode(codeDir: string,) {
   }]
   const answers = await inquirer.prompt(questions)
   if (answers.generate) {
-    await regenerateCode(codeDir, {codeDir})
+    await regenerateCode(
+      codeDir, {codeDir}, null
+    )
     // eslint-disable-next-line no-console
     console.log(`Your code has been regenerated at ${codeDir}`)
   }

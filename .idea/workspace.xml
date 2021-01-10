@@ -2,9 +2,68 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbecf23c-021a-4b34-b922-56115e328dd8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oclif.manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meta/custom.json" beforeDir="false" afterPath="$PROJECT_DIR$/meta/custom.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meta/customCode.json" beforeDir="false" afterPath="$PROJECT_DIR$/meta/customCode.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/check.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/check.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/generate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/generate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/settings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/settings.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/copyTemplateToMeta.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/copyTemplateToMeta.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/createCode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/createCode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/createCodeBase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/createCodeBase.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/createNewCode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/createNewCode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/createStarterAndNewCode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/createStarterAndNewCode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/getCodeDir.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/getCodeDir.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/inputs/getCodeDir.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/inputs/getCodeDir.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/inputs/promptToGenerateCode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/promptToGenerateCode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/inputs/promptUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/inputs/promptUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/logging.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/logging.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/chooseStaticType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/chooseStaticType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/instances/addStaticInstance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/instances/addStaticInstance.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/instances/updateStaticInstance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/instances/updateStaticInstance.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/instances/updateStaticTypeInstances.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/instances/updateStaticTypeInstances.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/settingsMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/settingsMenu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/settingsTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/settingsTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/specs/addNewSpecElement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/specs/addNewSpecElement.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/specs/askForValue.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/specs/askForValue.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/specs/askQuestion.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/specs/askQuestion.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/specs/createSpecElement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/specs/createSpecElement.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/specs/extendedDescription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/specs/extendedDescription.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/specs/getQuestionsForSpecSubtree.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/specs/getQuestionsForSpecSubtree.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/specs/replaceGlobalValuesInObject.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/specs/replaceGlobalValuesInObject.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/specs/simpleValueEdit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/specs/simpleValueEdit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/specs/updateInstanceSpecs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/specs/updateInstanceSpecs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/specs/updateSpecSubtree.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/specs/updateSpecSubtree.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/staticSettings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/staticSettings.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/settings/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/settings/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/setup/convertCommandArgs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/setup/convertCommandArgs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/setup/convertCommandOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/setup/convertCommandOptions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/setup/installDevPackagesTaskList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/setup/installDevPackagesTaskList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/setup/installMainPackagesTaskList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/setup/installMainPackagesTaskList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/setup/interactiveSequence.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/setup/interactiveSequence.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/codeBases/setup/preCommandsTaskList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/generateCommand/setup/preCommandsTaskList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/commentDelimiters.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/codeGeneration/storeCustomCode/commentDelimiters.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/customCode/getFileInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/codeGeneration/storeCustomCode/getFileInfo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/customCode/storeAddedCode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/codeGeneration/storeCustomCode/storeCustomCode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/customCode/storeCustomCodeForFile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/codeGeneration/storeCustomCode/storeCustomCodeForFile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/customCode/updateCustomCodeForFile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/codeGeneration/customCode/updateCustomCodeForFile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/fileGeneration/replaceCommentDelimiters.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/codeGeneration/fileGeneration/replaceCommentDelimiters.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/codeGeneration/regenerateCode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/codeGeneration/regenerateCode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/testing/checkDirForDiscrepancies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/check/checkDirForDiscrepancies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/testing/checkDirectories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/check/checkDirectories.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/testing/checkGeneratedUnits.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/check/checkGeneratedUnits.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/testing/checkStaticFiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/check/checkStaticFiles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/testing/discrepanciesFound.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/check/discrepanciesFound.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/testing/ensureIgnoredExist.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/check/ensureIgnoredExist.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/testing/failsTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/check/failsTests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/testing/initializeLogFile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/check/initializeLogFile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/testing/logEntry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/check/logEntry.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/testing/mergePackageJsons.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/check/mergePackageJsons.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom/testing/moveOverIgnored.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom/check/moveOverIgnored.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/custom/settingsMenu-Quit.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/custom/settingsMenu-Quit.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/custom/settingsMenu-Static.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/custom/settingsMenu-Static.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/custom/staticSettings.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/custom/staticSettings.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +83,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../copyKat" />
+    <property name="last_opened_file_path" value="$USER_HOME$/temp/clis/fakegeenee" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -41,6 +100,10 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/custom/codeGeneration" />
+      <recent name="$PROJECT_DIR$/src/custom/generateCommand" />
+      <recent name="$PROJECT_DIR$/src/custom/storeCustomCode" />
+      <recent name="$PROJECT_DIR$/src/custom/settings" />
       <recent name="$PROJECT_DIR$/src/custom" />
     </key>
   </component>
@@ -52,7 +115,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610013937605</updated>
-      <workItem from="1610013938790" duration="27760000" />
+      <workItem from="1610013938790" duration="48332000" />
     </task>
     <servers />
   </component>

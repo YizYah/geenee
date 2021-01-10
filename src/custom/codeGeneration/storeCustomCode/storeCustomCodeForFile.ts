@@ -3,7 +3,7 @@ const {customLocationNewRegExString} = require('magicalstrings').constants.Regex
 const {replacedRexExText} = require('magicalstrings').constants.Regex.regExReplacedCodeSection
 import {getFileInfo} from './getFileInfo'
 import {Configuration} from 'magicalstrings'
-import {commentDelimiters} from '../commentDelimiters'
+import {commentDelimiters} from './commentDelimiters'
 
 const fs = require('fs-extra')
 const path = require('path')

@@ -15,6 +15,7 @@ export async function checkDirForDiscrepancies(
     const subprocess = execa('diff', ['-x', 'meta', '-x', 'node_modules', '-rbBw', originalDir, generatedDir])
 
     await subprocess.stdout.pipe(fs.createWriteStream(diffsFile))
+
     problemsFound = await discrepanciesFound(
       diffsFile, logFile, problemsFound
     )

@@ -1,6 +1,6 @@
 const {commands, dirNames, docPages, links} = require('magicalstrings').constants
 
-import {regenerateCode} from '../regenerateCode'
+import {regenerateCode} from '../codeGeneration/regenerateCode'
 import {copyTemplateToMeta} from './copyTemplateToMeta'
 import {createStarterAndNewCode} from './createStarterAndNewCode'
 
@@ -58,5 +58,7 @@ export async function createCodeBase(
     )
   }
 
-  await regenerateCode(codeDir, session)
+  await regenerateCode(
+    codeDir, session, null
+  )
 }

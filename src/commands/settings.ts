@@ -8,8 +8,8 @@
 import {Command, flags} from '@oclif/command'
 
 /* ns__custom_start customImports */
-import {settingsMenu} from '../custom/codeGeneration/codeBases/settings/settingsMenu'
-import {promptToGenerateCode} from '../custom/codeGeneration/codeBases/inputs/promptToGenerateCode'
+import {settingsMenu} from '../custom/settings/settingsMenu'
+import {promptToGenerateCode} from '../custom/settings/promptToGenerateCode'
 const {getConfig} = require('magicalstrings').configs
 const {dirNames} = require('magicalstrings').constants
 const {getNsInfo} = require('magicalstrings').nsFiles

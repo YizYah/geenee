@@ -10,13 +10,16 @@ export async function discrepanciesFound(
   problemsFound: boolean,
 ) {
   let diffString = ''
+  await new Promise((r: any) => setTimeout(r, 2000)) // TODO: this gets out of a race condition.  Must be fixed.
+
   try {
     if (fs.existsSync(diffFile)) {
-      diffString = await fs.readFile(diffFile, 'utf8')
+      diffString = fs.readFileSync(diffFile, 'utf8')
     }
   } catch (error) {
     throw error
   }
+
   // const matches = diffString.match(regEx)
   if (diffString.length > 0) {
     // if (matches && matches.length > 0) {

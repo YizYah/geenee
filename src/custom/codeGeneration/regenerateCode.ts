@@ -1,14 +1,15 @@
 const {dirNames, fileNames, suffixes} = require('magicalstrings').constants
 const {getNsInfo} = require('magicalstrings').nsFiles
 const {getConfig} = require('magicalstrings').configs
-import {storeAddedCode} from './customCode/storeAddedCode'
+import {storeCustomCode} from './storeCustomCode/storeCustomCode'
+
 const {copyCodeBaseToNewDir} = require('magicalstrings').copyCodeBaseToNewDir
-// import {ensureIgnoredExist} from '../testing/ensureIgnoredExist'
+// import {ensureIgnoredExist} from '../check/ensureIgnoredExist'
 const {moveOverIgnored} = require('magicalstrings').moveOverIgnored
 import {generateCode} from './generateCode'
 import {insertCustomChanges} from './customCode/insertCustomChanges'
 import {updatePackageJson} from './packageJson/updatePackageJson'
-import {createSpecElement} from './codeBases/settings/specs/createSpecElement'
+import {createSpecElement} from '../settings/specs/createSpecElement'
 import {getPackageInfoJson} from './packageJson/getPackageInfoJson'
 import {Schema} from 'magicalstrings'
 import {buildSchema} from './schema/buildSchema'
@@ -16,36 +17,38 @@ import {buildSchema} from './schema/buildSchema'
 const fs = require('fs-extra')
 const {setNsInfo} = require('magicalstrings').nsFiles
 
-// async function restoreMetaDir(codeDir: string) {
-//   const backupDir = `${codeDir}${suffixes.BACKUP_DIR}`
-//   const backupMetaDir = `${backupDir}/${dirNames.META_DIR}`
-//   const metaDir = `${codeDir}/${dirNames.META_DIR}`
-//   await fs.remove(metaDir)
-//
-//   await execa(
-//     'cp',
-//     ['-r', backupMetaDir, metaDir],
-//   ).catch(
-//     (error: any) => {
-//       throw new Error(`error restoring ${dirNames.META_DIR} from ${backupMetaDir}: ${error}`)
-//     },
-//   )
-// }
+export async function regenerateCode(
+  codeDir: string, session: any, sourceLocation: any
+) {
+  const sourceCodeDir = sourceLocation || codeDir
 
-export async function regenerateCode(codeDir: string, session: any) {
-  const metaDir = `${codeDir}/${dirNames.META}`
-  const nsInfo = await getNsInfo(codeDir)
-  const starter = `${codeDir}${suffixes.STARTUP_DIR}`
+  const starter = `${sourceCodeDir}${suffixes.STARTUP_DIR}`
+  const backupDir = `${sourceCodeDir}${suffixes.BACKUP_DIR}`
 
-  // WARNING: breaking change from 1.6.8!!
-  // const config = await getConfiguration(template.dir)
-  const templateDir = `${metaDir}/${dirNames.TEMPLATE}`
+  const originalMetaDir = `${sourceCodeDir}/${dirNames.META}`
+  const templateDir = `${originalMetaDir}/${dirNames.TEMPLATE}`
   const config = await getConfig(templateDir)
 
-  const backupDir = `${codeDir}${suffixes.BACKUP_DIR}`
+  const metaDir = `${codeDir}/${dirNames.META}`
+
+  if (sourceLocation) {
+    // this is a test generation (for checking the code) in a different directory
+    try {
+      await fs.remove(codeDir)
+      await copyCodeBaseToNewDir(starter, codeDir)
+      await moveOverIgnored(
+        sourceCodeDir, codeDir, config
+      )
+    } catch (error) {
+      throw new Error(`cannot get test dir set up: ${error}`)
+    }
+  }
+  const nsInfo = await getNsInfo(codeDir)
+
+  // const customCodeJson = await storeCustomCode(sourceCodeDir, config)
 
   if (!starter) throw new Error(`the '${fileNames.NS_FILE}' file contains no starter.  ` +
-        'You need a starter to generate code.')
+    'You need a starter to generate code.')
 
   try {
     // checkForUpdates()
@@ -56,7 +59,16 @@ export async function regenerateCode(codeDir: string, session: any) {
     if (Object.keys(generalSettings).length === 0) generalSettings = await createSpecElement(general, session)
     nsInfo.general = generalSettings
     await setNsInfo(codeDir, nsInfo)
-    await storeAddedCode(codeDir, config)
+
+    // if (customCodeJson) {
+    //   const customCodeFile = `${metaDir}/${fileNames.CUSTOM_CODE_FILE}`
+    //   await fs.writeJson(
+    //     customCodeFile, customCodeJson, {spaces: 2}
+    //   )
+    // } else {
+    // no json provided, so you call with your own.
+    await storeCustomCode(sourceCodeDir, config)
+    // }
 
     // replace the backup
     await fs.remove(backupDir)

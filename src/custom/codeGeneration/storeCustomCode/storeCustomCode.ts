@@ -42,13 +42,14 @@ async function storeCustomCodeRegions(
     }
   }
 
+  // TODO: remove this side effect and call it where this gets called
   await fs.writeJson(
     customCodeFile, customCode, {spaces: 2}
   )
   return customCode
 }
 
-export const storeAddedCode = async (rootDir: string, config: Configuration) => {
+export const storeCustomCode = async (rootDir: string, config: Configuration) => {
   // const compsDir = `${rootDir}/src/${names.COMP_DIR}`
   if (!await fs.pathExists(rootDir)) return
   const metaDir = `${rootDir}/${dirNames.META}`

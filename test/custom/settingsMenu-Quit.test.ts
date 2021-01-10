@@ -1,5 +1,5 @@
-import {settingsMenu} from '../../src/custom/codeGeneration/codeBases/settings/settingsMenu'
-import {DONE} from '../../src/custom/codeGeneration/codeBases/settings/types'
+import {settingsMenu} from '../../src/custom/settings/settingsMenu'
+import {DONE} from '../../src/custom/settings/types'
 
 import {Configuration, NsInfo} from 'magicalstrings'
 const {questionNames} = require('magicalstrings').constants

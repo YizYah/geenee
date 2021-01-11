@@ -1,9 +1,9 @@
 import {Configuration, NsInfo} from 'magicalstrings'
 import {expect} from '@oclif/test'
 import {afterEach, beforeEach} from 'mocha'
-import {staticSettings} from '../../src/custom/codeGeneration/codeBases/settings/staticSettings'
-import * as chooseStaticTypeModule from '../../src/custom/codeGeneration/codeBases/settings/chooseStaticType'
-import * as updateStaticTypeInstancesModule from '../../src/custom/codeGeneration/codeBases/settings/instances/updateStaticTypeInstances'
+import {staticSettings} from '../../src/custom/settings/staticSettings'
+import * as chooseStaticTypeModule from '../../src/custom/settings/chooseStaticType'
+import * as updateStaticTypeInstancesModule from '../../src/custom/settings/instances/updateStaticTypeInstances'
 
 const {getConfig} = require('magicalstrings').configs
 const {getNsInfo} = require('magicalstrings').nsFiles

@@ -10,8 +10,8 @@ import {Command, flags} from '@oclif/command'
 /* ns__custom_start customImports */
 const {links, dirNames, fileNames, suffixes} = require('magicalstrings').constants
 
-import {failsTests} from '../custom/testing/failsTests'
-import {logEntry} from '../custom/testing/logEntry'
+import {failsTests} from '../custom/check/failsTests'
+import {logEntry} from '../custom/check/logEntry'
 const {resolveDir} = require('magicalstrings').resolveDir
 
 /* ns__custom_end customImports */

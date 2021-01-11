@@ -8,9 +8,11 @@
 import {Command, flags} from '@oclif/command'
 
 /* ns__custom_start customImports */
+import {createCodeBase} from '../custom/generate/createCodeBase'
+
 const {links} = require('magicalstrings').constants
-import {createCodeBase} from '../custom/codeGeneration/codeBases/createCodeBase'
 const {resolveDir} = require('magicalstrings').resolveDir
+
 /* ns__custom_end customImports */
 /* ns__end_section imports */
 

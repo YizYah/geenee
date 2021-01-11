@@ -1,5 +1,5 @@
-import {types} from '../types'
-import {simpleValueEdit} from './simpleValueEdit'
+import {types} from '../../types'
+import {simpleValueEdit} from '../editSpecs/simpleValueEdit'
 import {askQuestion} from './askQuestion'
 
 interface NewSpecElementQuestion {

@@ -1,4 +1,4 @@
-import {askForValue} from './askForValue'
+import {askForValue} from '../editSpecs/askForValue'
 import {replaceGlobalValuesInObject} from './replaceGlobalValuesInObject'
 
 const inquirer = require('inquirer')

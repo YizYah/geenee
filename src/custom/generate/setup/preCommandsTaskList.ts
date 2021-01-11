@@ -1,7 +1,7 @@
 import {CommandSpec} from 'magicalstrings'
 import {convertCommandArgs} from './convertCommandArgs'
 import {convertCommandOptions} from './convertCommandOptions'
-import {replaceGlobalValuesInObject} from '../../settings/specs/replaceGlobalValuesInObject'
+import {replaceGlobalValuesInObject} from '../../settings/specs/specCreation/replaceGlobalValuesInObject'
 
 const chalk = require('chalk')
 const execa = require('execa')

@@ -1,9 +1,9 @@
 const {commands, dirNames, docPages, links} = require('magicalstrings').constants
 
-import {regenerateCode} from '../codeGeneration/regenerateCode'
 import {copyTemplateToMeta} from './copyTemplateToMeta'
 import {createStarterAndNewCode} from './createStarterAndNewCode'
 
+const generateCode = require('geenee-spell')
 const fs = require('fs-extra')
 
 export async function createCodeBase(
@@ -58,7 +58,7 @@ export async function createCodeBase(
     )
   }
 
-  await regenerateCode(
+  await generateCode(
     codeDir, session, null
   )
 }

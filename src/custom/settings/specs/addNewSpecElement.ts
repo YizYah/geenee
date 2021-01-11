@@ -1,4 +1,4 @@
-import {createSpecElement} from './createSpecElement'
+import {createSpecElement} from './specCreation/createSpecElement'
 
 interface NewSpecElementQuestion {
   type: string;

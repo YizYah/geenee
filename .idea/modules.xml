@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/geenee.iml" filepath="$PROJECT_DIR$/.idea/geenee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ts-packrat/.idea/ts-packrat.iml" filepath="$PROJECT_DIR$/../ts-packrat/.idea/ts-packrat.iml" />
     </modules>
   </component>
 </project>

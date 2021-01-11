@@ -1,9 +1,9 @@
 import {Specs, SpecSet} from 'magicalstrings'
-import {getQuestionsForSpecSubtree} from './getQuestionsForSpecSubtree'
+import {getQuestionsForSpecSubtree} from './editSpecs/getQuestionsForSpecSubtree'
 import {ADD_NEW, AnswersForStaticInstanceSpec, DELETE, DONE, EDIT, EDIT_OPTIONS, TO_EDIT, types} from '../types'
 import {addNewSpecElement} from './addNewSpecElement'
-import {simpleValueEdit} from './simpleValueEdit'
-import {createSpecElement} from './createSpecElement'
+import {simpleValueEdit} from './editSpecs/simpleValueEdit'
+import {createSpecElement} from './specCreation/createSpecElement'
 
 const inquirer = require('inquirer')
 const editOptions = {

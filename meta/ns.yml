@@ -46,7 +46,7 @@ static:
     settings:
       slug: settings
       specs:
-        description: change your settings for the next generation
+        description: change your settings for the next generate
         args:
           - name: code
             description: path to the code base

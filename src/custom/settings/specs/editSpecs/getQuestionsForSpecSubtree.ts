@@ -1,5 +1,5 @@
 import {Specs, SpecSet} from 'magicalstrings'
-import {ADD_NEW, AnswerValue, DELETE, DONE, EDIT, EDIT_OPTIONS, TO_EDIT, types} from '../types'
+import {ADD_NEW, AnswerValue, DELETE, DONE, EDIT, EDIT_OPTIONS, TO_EDIT, types} from '../../types'
 const {attention, exitOption, generalOption, progress, userValue} = require('magicalstrings').constants.chalkColors
 import {extendedDescription} from './extendedDescription'
 import {askForValue} from './askForValue'

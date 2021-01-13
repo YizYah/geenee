@@ -57,7 +57,7 @@ async function chooseStaticInstance(staticType: string, nsInfo: NsInfo) {
   const questions = [{
     type: 'list',
     loop: false,
-    message: `Choose a ${chalk.blueBright(staticType)} to edit, or ${chalk.greenBright('add a new one')}...`,
+    message: `Choose a ${chalk.blueBright(staticType)} to edit, or ${chalk.greenBright('add a newTemplate one')}...`,
     name: INSTANCE,
     choices: choiceList,
   }]

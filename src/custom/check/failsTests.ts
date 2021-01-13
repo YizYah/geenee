@@ -16,7 +16,7 @@ export async function failsTests(codeDir: string) {
   if (!starter) throw new Error(`the '${fileNames.NS_FILE}' file contains no starter.  ` +
     'You need a starter to test the code.')
 
-  // store added code before generating new code.
+  // store added code before generating newTemplate code.
   try {
     await generateCode(
       testDir, {}, codeDir

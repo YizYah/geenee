@@ -1,4 +1,4 @@
-import {logEntry} from './logEntry'
+import {logEntry} from '../shared/logEntry'
 
 const fs = require('fs-extra')
 const diff = require('arr-diff')

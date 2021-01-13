@@ -7,9 +7,9 @@ template:
 static:
   command:
     new:
-      slug: new
+      slug: newTemplate
       specs:
-        description: Create a new questionnaire
+        description: Create a newTemplate questionnaire
         args:
           - name: name
             description: name of questionnaire

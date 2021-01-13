@@ -66,7 +66,7 @@ function getChoicesForSpecChildren(
     }
 
     specChildrenChoices.push({
-      name: progress('add new'),
+      name: progress('add newTemplate'),
       value: {name: ADD_NEW, typeOfValue: '', required: false},
       short: ADD_NEW,
     })

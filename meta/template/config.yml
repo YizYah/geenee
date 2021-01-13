@@ -90,7 +90,7 @@ static:
           parse:
             type: function
             required: false
-            description: maps input to new output
+            description: maps input to newTemplate output
       flags:
         type: list
         required: false
@@ -152,7 +152,7 @@ static:
           parse:
             type: function
             required: false
-            description: maps input to new output
+            description: maps input to newTemplate output
 
 format:
   customFileFilter: '+(*.{ts,tsx,md}|.eslintrc)'

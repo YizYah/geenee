@@ -22,7 +22,7 @@ static:
             description: commit message
             required: true
           - name: branch
-            description: new branch to push
+            description: newTemplate branch to push
             required: true
         flags:
           - name: force
@@ -64,6 +64,6 @@ static:
           - name: deleteRemote
             type: boolean
             char: r
-            description: delete the new branch remotely after merging
+            description: delete the newTemplate branch remotely after merging
             required: false
             default: false

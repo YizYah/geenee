@@ -19,7 +19,7 @@ export async function createNewCode(codeDir: string,
       },
     },
     {
-      title: 'Copy directory to new app directory',
+      title: 'Copy directory to newTemplate app directory',
       task: async () => {
         const finalCodeDir = await getCodeDir(codeDir) || ''
 

@@ -51,7 +51,6 @@ static args = [
 
 async run() {
   const {args, flags} = this.parse(Generate)
-  console.log(`running locally geenee...`)
 
   const {code} = args
 

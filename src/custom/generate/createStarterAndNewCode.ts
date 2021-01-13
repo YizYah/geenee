@@ -116,7 +116,7 @@ export async function createStarterAndNewCode(
     await installDependencies.run()
     const nsFilePath = `${codeDir}/${dirNames.META}/${fileNames.NS_FILE}`
     if (!await fs.pathExists(nsFilePath)) {
-      // if the settings file doesn't exist yet then it's brand new...
+      // if the settings file doesn't exist yet then it's brand newTemplate...
       const newAppTasks = await createNewCode(codeDir, starterDir)// , finalTemplateDir)
       await newAppTasks.run()
     }

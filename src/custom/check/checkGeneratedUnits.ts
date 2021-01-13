@@ -14,14 +14,14 @@ export async function checkGeneratedUnits(
     const diffsFile = `${diffsDir}/${unitName}`
     const originalUnit = `${originalComps}/${unitName}`
     const generatedUnit = `${generatedComps}/${unitName}`
-    const problemsFoundLocally = await checkDirForDiscrepancies(
+    const problemsFoundLocally: boolean = await checkDirForDiscrepancies(
       diffsFile,
       originalUnit,
       generatedUnit,
       logFile,
       problemsFound
     )
-    problemsFound = problemsFound || problemsFoundLocally
+    if (!problemsFound) problemsFound = problemsFoundLocally
   }))
   return problemsFound
 }

@@ -1,4 +1,4 @@
-import {logEntry} from './logEntry'
+import {logEntry} from '../shared/logEntry'
 const {links} = require('magicalstrings').constants
 import * as chalk from 'chalk'
 

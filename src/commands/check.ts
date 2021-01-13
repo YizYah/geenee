@@ -10,9 +10,9 @@ import {Command, flags} from '@oclif/command'
 /* ns__custom_start customImports */
 const {links, dirNames, fileNames, suffixes} = require('magicalstrings').constants
 
-import {failsTests} from '../custom/check/failsTests'
-import {logEntry} from '../custom/check/logEntry'
+import {logEntry} from '../custom/shared/logEntry'
 const {resolveDir} = require('magicalstrings').resolveDir
+const checkCode = require('geenee-check')
 
 /* ns__custom_end customImports */
 /* ns__end_section imports */
@@ -53,7 +53,7 @@ async run() {
   const diffsFile = `${testMetaDir}/${fileNames.DIFFS}`
   const logFile = `${testMetaDir}/${fileNames.TESTS_LOG}`
 
-  const problemsFound = await failsTests(codeDir)
+  const problemsFound = await checkCode(codeDir)
 
   let logMessage = `
 You will find all files showing discrepancies in the file ${diffsFile}.

@@ -1,68 +1,74 @@
-import {Configuration} from 'magicalstrings'
-import {NsInfo}  from 'magicalstrings'
-const {exitOption, generalOption} = require('magicalstrings').constants.chalkColors
-import {DONE, types} from './types'
+import {Configuration, NsInfo} from 'magicalstrings'
+import {FlowType} from './choiceBrew/types'
+import {menu} from './choiceBrew/menu'
+import {Choice} from './choiceBrew/types'
 import {staticSettings} from './staticSettings'
+import {types} from './types'
 import {updateSpecSubtree} from './specs/updateSpecSubtree'
+
+const {generalOption} = require('magicalstrings').constants.chalkColors
+
 const setNsInfo = require('magicalstrings').nsFiles.setNsInfo
-const {answerValues, questionNames} = require('magicalstrings').constants
+const {answerValues} = require('magicalstrings').constants
 
-const inquirer = require('inquirer')
+async function staticData(context: any) {
+  const {config, nsInfo, codeDir} = context
+  const nsInfoStatic = await staticSettings(
+    config, nsInfo, codeDir,
+  )
+  nsInfo.static = nsInfoStatic
+  await setNsInfo(codeDir, nsInfo)
+  return context
+}
 
-const questions = [{
-  type: 'list',
-  name: questionNames.SETTINGS_TYPE,
-  message: 'What settings would you like to change?',
-  choices: [
+async function generalData(context: any) {
+  const {config, nsInfo, codeDir} = context
+  const nsInfoGeneral = await updateSpecSubtree(
+    nsInfo.general,
+    config.general,
+    types.TOP_LEVEL,
+    'general settings',
+    true,
+  )
+
+  nsInfo.general = nsInfoGeneral
+  await setNsInfo(codeDir, nsInfo)
+  return context
+}
+
+const prompt = 'What settings would you like to change?'
+const choices: Choice[] =
+  [
     {
-      name: generalOption('General'),
+      flow: FlowType.command,
+      name: 'General',
+      description: generalOption('General'),
       value: answerValues.settingsTypes.GENERAL,
-      short: 'General',
+      callback: generalData,
     },
     {
-      name: generalOption('Static'),
+      flow: FlowType.command,
+      name: 'Static',
+      description: generalOption('Static'),
       value: answerValues.settingsTypes.STATIC,
-      short: 'Static',
+      callback: staticData,
     },
-    {
-      name: exitOption('Quit'),
-      value: DONE,
-      short: 'quit',
-    },
-  ],
-}]
+  ]
 
 export async function settingsMenu(
   config: Configuration,
   nsInfo: NsInfo,
   codeDir: string,
 ) {
+  const context = {
+    config,
+    nsInfo,
+    codeDir,
+  }
   try {
-    // eslint-disable-next-line no-constant-condition
-    while (true) {
-      const answers = await inquirer.prompt(questions)
-      if (answers[questionNames.SETTINGS_TYPE] === DONE) {
-        return nsInfo
-      }
-      if (answers[questionNames.SETTINGS_TYPE] === answerValues.settingsTypes.STATIC) {
-        const nsInfoStatic = await staticSettings(
-          config, nsInfo, codeDir
-        )
-        nsInfo.static = nsInfoStatic
-      }
-      if (answers[questionNames.SETTINGS_TYPE] === answerValues.settingsTypes.GENERAL) {
-        const nsInfoGeneral = await updateSpecSubtree(
-          nsInfo.general,
-          config.general,
-          types.TOP_LEVEL,
-          'general settings',
-          true,
-        )
-
-        nsInfo.general = nsInfoGeneral
-        await setNsInfo(codeDir, nsInfo)
-      }
-    }
+    await menu(
+      choices, prompt, context,
+    )
   } catch (error) {
     throw new Error(`in settings menu: ${error}`)
   }

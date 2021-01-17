@@ -1,5 +1,5 @@
 import {Configuration, NsInfo}  from 'magicalstrings'
-const {setNsInfo} = require('magicalstrings').nsFiles.setNsInfo
+const {setNsInfo} = require('magicalstrings').nsFiles
 
 import {updateInstanceSpecs} from '../specs/updateInstanceSpecs'
 const {attention, exitOption, generalOption, statusUpdate} = require('magicalstrings').constants.chalkColors

@@ -1,5 +1,5 @@
 import {createMenuOptions} from './createMenuOptions'
-import {Choice, FlowType} from './types'
+import {Choice, ChoicesGenerator, FlowType} from './types'
 import {menuQuestionName} from './constants'
 const inquirer = require('inquirer')
 
@@ -9,14 +9,12 @@ async function makeSelection(menuOptions: any) {
 }
 
 export async function menu(
-  choices: Choice[],
+  choicesGenerator: ChoicesGenerator,
   prompt: string,
   context: any,
 ) {
-  const menuOptions = createMenuOptions(
-    choices, prompt, context
-  )
-  console.log(`menuOptions is: ${JSON.stringify(menuOptions, null, 1)}`)
+  const choices: Choice[] = choicesGenerator(context)
+  const menuOptions = createMenuOptions(choices, prompt)
 
   try {
     let selection = await makeSelection(menuOptions)
@@ -24,12 +22,10 @@ export async function menu(
       if (selection.flow === FlowType.back) {
         return context
       }
-      console.log(`selection is: ${JSON.stringify(selection)}`)
       if (selection.callback) {
-        console.log(`selection.callback is ${JSON.stringify(selection.callback)}`)
-        context = await selection.callback(context)
+        context = await selection.callback(context, selection.value)
       }
-      selection = await makeSelection(menuOptions)
+      selection = await makeSelection(createMenuOptions(choicesGenerator(context), prompt))
     }
   } catch (error) {
     throw new Error(`in menu: ${error}`)

@@ -1,7 +1,7 @@
-import {Choice, Choices, FlowType } from './types'
+import {Choice, FlowType} from './types'
 import {defaultBackName, menuQuestionName} from './constants'
 
-function createMenuOption(choice: Choice){
+function createMenuOption(choice: Choice) {
   const name = choice.description || choice.name
   const choiceValue = choice.value || choice.name
   const short = choice.short || choice.name
@@ -17,13 +17,9 @@ function createMenuOption(choice: Choice){
   }
 }
 
-export function createMenuOptions(
-  choices: Choice[],
-  prompt: string,
-  context: any,
-) {
-  let finalChoices = choices
-  if (choices.filter((x: Choice) => x.flow === FlowType.back).length ===0) {
+export function createMenuOptions(choices: Choice[], prompt: string) {
+  const finalChoices = choices
+  if (choices.filter((x: Choice) => x.flow === FlowType.back).length === 0) {
     // need to add back option
     const backChoice: Choice = {
       flow: FlowType.back,
@@ -32,7 +28,6 @@ export function createMenuOptions(
 
     finalChoices.push(backChoice)
   }
-  console.log(`finalChoices=${JSON.stringify(finalChoices,null, 2)}`)
 
   return [{
     type: 'list',
@@ -41,5 +36,4 @@ export function createMenuOptions(
     name: menuQuestionName,
     choices: finalChoices.map(choice => createMenuOption(choice)),
   }]
-
 }

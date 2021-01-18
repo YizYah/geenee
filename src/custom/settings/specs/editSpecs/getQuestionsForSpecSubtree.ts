@@ -52,6 +52,7 @@ function getChoicesForSpecChildren(
 ) {
   let specChildrenChoices: SpecChoice[] = []
 
+  console.log(`in getChoicesForSpecChildren, type =${type}`)
   if (type === types.LIST) {
     if (instanceSpecsSubtree) {
       instanceSpecsSubtree.map((instance: any, index: number) => {
@@ -66,7 +67,7 @@ function getChoicesForSpecChildren(
     }
 
     specChildrenChoices.push({
-      name: progress('add newTemplate'),
+      name: progress('add new'),
       value: {name: ADD_NEW, typeOfValue: '', required: false},
       short: ADD_NEW,
     })
@@ -123,6 +124,7 @@ export function getQuestionsForSpecSubtree(
 ) {
   const questions = []
 
+  console.log(`\ntype = ${type}\n`)
   if (type === types.TOP_LEVEL) {
     // there is no "contents" for a top level set
     questions.push({

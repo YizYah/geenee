@@ -95,10 +95,15 @@ export async function updateSpecSubtree(
         required
       )
       const answers: AnswersForStaticInstanceSpec = await inquirer.prompt(questions)
+      console.log(`in updateSpecSubtree, answers = ${JSON.stringify(answers)}
+      specsForInstance=${JSON.stringify(specsForInstance)}`)
 
       if (answers[EDIT] !== undefined) return simpleValueEdit(type, answers[EDIT])
 
-      if (answers[TO_EDIT] && answers[TO_EDIT].name === DONE) return specsForInstance
+      if (answers[TO_EDIT] && answers[TO_EDIT].name === DONE) {
+        console.log(`about to return specsForInstance`)
+        return specsForInstance
+      }
       if (answers[TO_EDIT] && answers[TO_EDIT].name === DELETE) return undefined
 
       if (answers[EDIT_OPTIONS] && answers[EDIT_OPTIONS] === editOptions.DELETE)

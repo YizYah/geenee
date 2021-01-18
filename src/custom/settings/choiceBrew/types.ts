@@ -1,7 +1,11 @@
+import {Configuration, NsInfo} from 'magicalstrings'
+
+export type ChoicesGenerator = (context: any) => Choice[];
+export type ChoiceCallback = (context: any, choice: string) => any;
+
 export enum FlowType {
-  back = "BACK",
-  menu = "MENU",
-  command = "COMMAND",
+  back = 'BACK',
+  command = 'COMMAND',
 }
 
 export interface Choice {
@@ -10,9 +14,18 @@ export interface Choice {
   description?: string;
   value?: any;
   short?: string;
-  callback?: any;
+  callback?: ChoiceCallback;
 }
 
-export interface Choices {
-  [index: number]: Choice;
+export interface StaticContext {
+  config: Configuration;
+  nsInfo: NsInfo;
+  codeDir: string;
+}
+
+export interface StaticInstanceContext {
+  staticType: string;
+  config: Configuration;
+  nsInfo: NsInfo;
+  codeDir: string;
 }

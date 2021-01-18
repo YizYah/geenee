@@ -1,6 +1,6 @@
 import {Configuration} from 'magicalstrings'
 import {NsInfo}  from 'magicalstrings'
-import {Choice} from '../settingsTypes'
+import {OriginalChoice} from '../settingsTypes'
 const {ADD_NEW_VALUE, menuChoices} = require('magicalstrings').constants
 import {addStaticInstance} from './addStaticInstance'
 import {updateStaticInstance} from './updateStaticInstance'
@@ -34,7 +34,7 @@ function staticInstancesFromNsInfo(staticType: string, nsInfo: NsInfo) {
     short: 'done',
   }
 
-  let staticInstanceChoices: Choice[] = []
+  let staticInstanceChoices: OriginalChoice[] = []
   if (staticInstances) {
     const instances = Object.keys(staticInstances)
     staticInstanceChoices = instances.map((typeName: string) => {
@@ -52,7 +52,7 @@ function staticInstancesFromNsInfo(staticType: string, nsInfo: NsInfo) {
 }
 
 async function chooseStaticInstance(staticType: string, nsInfo: NsInfo) {
-  const choiceList: Choice[] = staticInstancesFromNsInfo(staticType, nsInfo)
+  const choiceList: OriginalChoice[] = staticInstancesFromNsInfo(staticType, nsInfo)
 
   const questions = [{
     type: 'list',

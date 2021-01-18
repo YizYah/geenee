@@ -1,7 +1,10 @@
-import {Configuration, NsInfo}  from 'magicalstrings'
+import {Configuration, NsInfo} from 'magicalstrings'
+
 const {setNsInfo} = require('magicalstrings').nsFiles
 
 import {updateInstanceSpecs} from '../specs/updateInstanceSpecs'
+import {StaticInstanceContext} from '../choiceBrew/types'
+
 const {attention, exitOption, generalOption, statusUpdate} = require('magicalstrings').constants.chalkColors
 
 const inquirer = require('inquirer')
@@ -22,6 +25,7 @@ interface AnswersForUpdateInstance {
 const ACTION = 'action'
 const NAME = 'name'
 const SLUG = 'slug'
+
 // const SPECS = 'specs'
 
 interface AnswersForUpdateInstance {
@@ -31,18 +35,15 @@ interface AnswersForUpdateInstance {
   specs: string;
 }
 
-export async function updateStaticInstance(
-  staticType: string,
-  instanceName: string,
-  config: Configuration,
-  nsInfo: NsInfo,
-  codeDir: string,
-) {
+export async function updateStaticInstance2(context: StaticInstanceContext,
+  instanceName: string): Promise<StaticInstanceContext> {
+  const {staticType, config, nsInfo, codeDir} = context
   if (!nsInfo.static ||
     !nsInfo.static[staticType] ||
     !nsInfo.static[staticType][instanceName]
   ) throw new Error(`attempt to edit nonexistent static instance ${instanceName}.`)
 
+  console.log(`in updateStaticInstance2...`)
   const instanceInfo = nsInfo.static[staticType][instanceName]
 
   const questions = [
@@ -78,14 +79,19 @@ export async function updateStaticInstance(
     },
   ]
 
-  const answers: AnswersForUpdateInstance = await inquirer.prompt(questions)
+  let answers: AnswersForUpdateInstance = await inquirer.prompt(questions)
 
   while (answers[ACTION]) {
+    console.log(`answers in updateStaticInstance2=${JSON.stringify(answers)}`)
+    if (nsInfo.static) console.log(`   list of instances in while loop of updateStaticInstance2 =
+    ${JSON.stringify(Object.keys(nsInfo.static[staticType]))}
+    `)
+
     const actionType = answers[ACTION]
     if (actionType === exitOption(actionTypes.BACK)) {
       // eslint-disable-next-line no-console
       console.log(statusUpdate(`finished updating ${staticType}...`))
-      return nsInfo
+      return context
     }
 
     if (actionType === attention(actionTypes.DELETE)) {
@@ -93,7 +99,8 @@ export async function updateStaticInstance(
       await setNsInfo(codeDir, nsInfo)
       // eslint-disable-next-line no-console
       console.log(statusUpdate(`${instanceName} deleted...`))
-      return nsInfo
+      context.nsInfo = nsInfo
+      return context
     }
 
     if (actionType === generalOption(actionTypes.RENAME)) {
@@ -101,17 +108,27 @@ export async function updateStaticInstance(
         nsInfo.static[staticType][answers[NAME]] = {...instanceInfo}
         delete nsInfo.static[staticType][instanceName]
       }
+      if (nsInfo.static) console.log(`   list of instances after the update =
+    ${JSON.stringify(Object.keys(nsInfo.static[staticType]))}
+    `)
+      if (nsInfo.static) console.log(`   list of instances after the update in context =
+    ${JSON.stringify(Object.keys(context.nsInfo.static[staticType]))}
+    `)
 
       nsInfo.static[staticType][answers[NAME]].slug = answers[SLUG]
       await setNsInfo(codeDir, nsInfo)
       // eslint-disable-next-line no-console
       console.log(statusUpdate(`${instanceName} updated...`))
-      return nsInfo
+      return context
     }
 
+    console.log(`
+    About to call updateInstanceSpecs.staticType=${staticType}, instanceName={instanceName}`)
     await updateInstanceSpecs(
-      staticType, instanceName, config, nsInfo, codeDir
+      staticType, instanceName, config, nsInfo, codeDir,
     )
-    return nsInfo
+
+    answers = await inquirer.prompt(questions)
   }
+  return context
 }

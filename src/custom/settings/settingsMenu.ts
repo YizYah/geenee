@@ -1,5 +1,5 @@
 import {Configuration, NsInfo} from 'magicalstrings'
-import {FlowType} from './choiceBrew/types'
+import {ChoicesGenerator, FlowType, StaticContext} from './choiceBrew/types'
 import {menu} from './choiceBrew/menu'
 import {Choice} from './choiceBrew/types'
 import {staticSettings} from './staticSettings'
@@ -11,17 +11,17 @@ const {generalOption} = require('magicalstrings').constants.chalkColors
 const setNsInfo = require('magicalstrings').nsFiles.setNsInfo
 const {answerValues} = require('magicalstrings').constants
 
-async function staticData(context: any) {
+async function staticData(context: StaticContext, selection: any): Promise<StaticContext> {
+  console.log(`selection=${JSON.stringify(selection)}`)
   const {config, nsInfo, codeDir} = context
-  const nsInfoStatic = await staticSettings(
+  context = await staticSettings(
     config, nsInfo, codeDir,
   )
-  nsInfo.static = nsInfoStatic
-  await setNsInfo(codeDir, nsInfo)
+  await setNsInfo(codeDir, context.nsInfo)
   return context
 }
 
-async function generalData(context: any) {
+async function generalData(context: StaticContext) {
   const {config, nsInfo, codeDir} = context
   const nsInfoGeneral = await updateSpecSubtree(
     nsInfo.general,
@@ -55,19 +55,23 @@ const choices: Choice[] =
     },
   ]
 
+function choicesGenerator(): Choice[] {
+  return choices
+}
+
 export async function settingsMenu(
   config: Configuration,
   nsInfo: NsInfo,
   codeDir: string,
 ) {
-  const context = {
+  const context: StaticContext = {
     config,
     nsInfo,
     codeDir,
   }
   try {
     await menu(
-      choices, prompt, context,
+      choicesGenerator, prompt, context,
     )
   } catch (error) {
     throw new Error(`in settings menu: ${error}`)

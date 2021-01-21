@@ -3,6 +3,7 @@ import {ADD_NEW, AnswerValue, DELETE, DONE, EDIT, EDIT_OPTIONS, TO_EDIT, types} 
 const {attention, exitOption, generalOption, progress, userValue} = require('magicalstrings').constants.chalkColors
 import {extendedDescription} from './extendedDescription'
 import {askForValue} from './askForValue'
+import {Choice, FlowType} from '../../choiceBrew/types'
 
 const pluralize = require('pluralize')
 
@@ -52,7 +53,6 @@ function getChoicesForSpecChildren(
 ) {
   let specChildrenChoices: SpecChoice[] = []
 
-  console.log(`in getChoicesForSpecChildren, type =${type}`)
   if (type === types.LIST) {
     if (instanceSpecsSubtree) {
       instanceSpecsSubtree.map((instance: any, index: number) => {
@@ -110,8 +110,6 @@ function getChoicesForSpecChildren(
     short: DONE,
   })
 
-  // console.log(`** specChildrenChoices = ${JSON.stringify(specChildrenChoices, null, 1)}`)
-
   return specChildrenChoices
 }
 
@@ -121,10 +119,11 @@ export function getQuestionsForSpecSubtree(
   type: string,
   currentName: string,
   required: boolean,
+  session: any
 ) {
+
   const questions = []
 
-  console.log(`\ntype = ${type}\n`)
   if (type === types.TOP_LEVEL) {
     // there is no "contents" for a top level set
     questions.push({
@@ -158,6 +157,7 @@ export function getQuestionsForSpecSubtree(
     specsForType,
     currentName,
     EDIT,
+    session,
   )
   if (required) {
     questions.push(editQuestion)

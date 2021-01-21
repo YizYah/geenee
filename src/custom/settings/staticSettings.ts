@@ -1,10 +1,11 @@
 import {Configuration} from 'magicalstrings'
 import {NsInfo}  from 'magicalstrings'
-import {updateStaticTypeInstances2} from './instances/updateStaticTypeInstances2'
-import {Choice, FlowType, StaticContext} from './choiceBrew/types'
+import {updateStaticTypeInstances2} from './specs/settings/callbacks/updateStaticTypeInstances2'
+import {Choice, FlowType} from './choiceBrew/types'
 import {menu} from './choiceBrew/menu'
 import {explanation, generalOption} from 'magicalstrings/lib/exports/constants/chalkColors'
 import {setNsInfo} from 'magicalstrings/lib/exports/nsFiles/setNsInfo'
+import {StaticContext} from './specs/settings/contexts'
 
 export function staticTypeChoicesFromConfig(context: StaticContext): Choice[] {
   const {config} = context
@@ -42,7 +43,8 @@ export async function staticSettings(
       staticTypeChoicesFromConfig, prompt, context,
     )
   } catch (error) {
-    throw new Error(`in settings menu: ${error}`)
+    console.log(error)
+    throw new Error(`in static settings menu: ${error}`)
   }
   await setNsInfo(codeDir, context.nsInfo)
   return context

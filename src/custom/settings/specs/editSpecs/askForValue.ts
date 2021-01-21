@@ -1,5 +1,6 @@
 import {extendedDescription} from './extendedDescription'
-import {Specs} from 'magicalstrings'
+import {Specs, SpecSet} from 'magicalstrings'
+import {replaceGlobalObjectValues} from '../specCreation/replaceGlobalValuesInObject'
 const {attention} = require('magicalstrings').constants.chalkColors
 
 export function askForValue(
@@ -7,11 +8,14 @@ export function askForValue(
   specsForType: Specs,
   currentName: string,
   questionName: string,
+  session: any,
 ) {
   const name = questionName
+  console.log(`in askForValue for ${currentName}.  specsForType=${JSON.stringify(specsForType)}`)
+
   const {type, description, choices, required} = specsForType
-  const defaultAnswer = specsForInstance || specsForType.default
-  let fullDescription = '[' + extendedDescription(type, description) + ']'
+  const defaultAnswer = specsForInstance || replaceGlobalObjectValues(specsForType.default, session, {})
+  let fullDescription = '[' + extendedDescription(currentName, description) + ']'
   if (required) fullDescription += attention('*')
   if (type === 'boolean') {
     return {

@@ -93,9 +93,7 @@ export async function updateStaticTypeInstances(
     }
 
     if (staticInstance === ADD_NEW_VALUE) {
-      await addStaticInstance(
-        staticType, config, nsInfo, codeDir
-      )
+      await addStaticInstance({staticType, config, nsInfo, codeDir})
     }
 
     if (staticInstance !== ADD_NEW_VALUE) {

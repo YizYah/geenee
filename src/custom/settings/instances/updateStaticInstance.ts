@@ -1,5 +1,5 @@
 import {Configuration, NsInfo}  from 'magicalstrings'
-const {setNsInfo} = require('magicalstrings').nsFiles.setNsInfo
+const {setNsInfo} = require('magicalstrings').nsFiles
 
 import {updateInstanceSpecs} from '../specs/updateInstanceSpecs'
 const {attention, exitOption, generalOption, statusUpdate} = require('magicalstrings').constants.chalkColors
@@ -85,7 +85,7 @@ export async function updateStaticInstance(
     if (actionType === exitOption(actionTypes.BACK)) {
       // eslint-disable-next-line no-console
       console.log(statusUpdate(`finished updating ${staticType}...`))
-      return
+      return nsInfo
     }
 
     if (actionType === attention(actionTypes.DELETE)) {
@@ -93,7 +93,7 @@ export async function updateStaticInstance(
       await setNsInfo(codeDir, nsInfo)
       // eslint-disable-next-line no-console
       console.log(statusUpdate(`${instanceName} deleted...`))
-      return
+      return nsInfo
     }
 
     if (actionType === generalOption(actionTypes.RENAME)) {
@@ -106,12 +106,12 @@ export async function updateStaticInstance(
       await setNsInfo(codeDir, nsInfo)
       // eslint-disable-next-line no-console
       console.log(statusUpdate(`${instanceName} updated...`))
-      return
+      return nsInfo
     }
 
     await updateInstanceSpecs(
       staticType, instanceName, config, nsInfo, codeDir
     )
-    return
+    return nsInfo
   }
 }

@@ -15,9 +15,14 @@ function fixBooleans(str: string) {
   return str
 }
 
-function replaceGlobalObjectValues(
+/*
+  replaces any global objects.  Also set up to take answers so that you can use it
+  with inquirer globally.
+ */
+export function replaceGlobalObjectValues(
   value: any, session: any, answers: any
 ) {
+  if (!value) return value
   const newValue = value.replace(regExObjectValue, function (
     match: string,
     objectName: string,
@@ -31,6 +36,8 @@ function replaceGlobalObjectValues(
   return newValue
 }
 
+// takes in a raw object (of depth 1) and replaces any session variables there.
+// Not currently recursive.
 export function replaceGlobalValuesInObject(
   rawObject: any, session: any, answers: any = {}
 ) {

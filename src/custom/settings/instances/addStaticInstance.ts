@@ -1,17 +1,15 @@
-import {Configuration} from 'magicalstrings'
-import {NsInfo}  from 'magicalstrings'
-const setNsInfo = require('magicalstrings').nsFiles.setNsInfo
+import {StaticTypeContext} from '../specs/settings/contexts'
 
+const setNsInfo = require('magicalstrings').nsFiles.setNsInfo
 const inquirer = require('inquirer')
 
-export async function addStaticInstance(
-  staticType: string,
-  config: Configuration,
-  nsInfo: NsInfo,
-  codeDir: string,
-) {
+export async function addStaticInstance(context: StaticTypeContext): Promise<StaticTypeContext> {
   // console.log(`** about to addStaticInstance for ${staticType}`)
   // const typeSpec = config.static[staticType].specs
+  const {staticType,
+    nsInfo,
+    codeDir,
+  } = context
 
   const addInstanceQuestions = [
     {
@@ -53,6 +51,7 @@ export async function addStaticInstance(
   }
 
   await setNsInfo(codeDir, nsInfo)
+  return context
 
   // console.log(`** added answers = ${JSON.stringify(answers, null, 1)}`)
 }

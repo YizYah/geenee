@@ -1,68 +1,25 @@
-import {Configuration} from 'magicalstrings'
-import {NsInfo}  from 'magicalstrings'
-const {exitOption, generalOption} = require('magicalstrings').constants.chalkColors
-import {DONE, types} from './types'
-import {staticSettings} from './staticSettings'
-import {updateSpecSubtree} from './specs/updateSpecSubtree'
-const setNsInfo = require('magicalstrings').nsFiles.setNsInfo
-const {answerValues, questionNames} = require('magicalstrings').constants
+import {Configuration, NsInfo} from 'magicalstrings'
+import {menu} from './choiceBrew/menu'
+import {StaticContext} from './specs/settings/contexts'
 
-const inquirer = require('inquirer')
+import {generalMenuChoicesGenerator} from './specs/settings/choicesGenerators/generalMenuChoicesGenerator'
 
-const questions = [{
-  type: 'list',
-  name: questionNames.SETTINGS_TYPE,
-  message: 'What settings would you like to change?',
-  choices: [
-    {
-      name: generalOption('General'),
-      value: answerValues.settingsTypes.GENERAL,
-      short: 'General',
-    },
-    {
-      name: generalOption('Static'),
-      value: answerValues.settingsTypes.STATIC,
-      short: 'Static',
-    },
-    {
-      name: exitOption('Quit'),
-      value: DONE,
-      short: 'quit',
-    },
-  ],
-}]
+const prompt = 'What settings would you like to change?'
 
 export async function settingsMenu(
   config: Configuration,
   nsInfo: NsInfo,
   codeDir: string,
 ) {
+  const context: StaticContext = {
+    config,
+    nsInfo,
+    codeDir,
+  }
   try {
-    // eslint-disable-next-line no-constant-condition
-    while (true) {
-      const answers = await inquirer.prompt(questions)
-      if (answers[questionNames.SETTINGS_TYPE] === DONE) {
-        return nsInfo
-      }
-      if (answers[questionNames.SETTINGS_TYPE] === answerValues.settingsTypes.STATIC) {
-        const nsInfoStatic = await staticSettings(
-          config, nsInfo, codeDir
-        )
-        nsInfo.static = nsInfoStatic
-      }
-      if (answers[questionNames.SETTINGS_TYPE] === answerValues.settingsTypes.GENERAL) {
-        const nsInfoGeneral = await updateSpecSubtree(
-          nsInfo.general,
-          config.general,
-          types.TOP_LEVEL,
-          'general settings',
-          true,
-        )
-
-        nsInfo.general = nsInfoGeneral
-        await setNsInfo(codeDir, nsInfo)
-      }
-    }
+    await menu(
+      generalMenuChoicesGenerator, prompt, context,
+    )
   } catch (error) {
     throw new Error(`in settings menu: ${error}`)
   }

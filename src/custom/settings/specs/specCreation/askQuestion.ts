@@ -9,17 +9,23 @@ export async function askQuestion(
   answers: any,
   session: any = {},
 ) {
-  const questionKeys = replaceGlobalValuesInObject(
-    subTypeInfo, session, answers
-  )
-  const questions = [
-    askForValue(
-      null,
-      questionKeys,
-      subType,
-      subType,
-    ),
-  ]
+  let questions
+  try {
+    const questionKeys = replaceGlobalValuesInObject(
+      subTypeInfo, session, answers
+    )
+    questions = [
+      askForValue(
+        null,
+        questionKeys,
+        subType,
+        subType,
+        session
+      ),
+    ]
+  } catch (error) {
+    throw new Error(`asking a question for subType ${subType}`)
+  }
 
   const theseAnswers = await inquirer.prompt(questions)
   answers = {...answers, ...theseAnswers}

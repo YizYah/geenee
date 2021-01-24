@@ -9,6 +9,7 @@ export async function updateInstanceSpecs(
   config: Configuration,
   nsInfo: NsInfo,
   codeDir: string,
+  session: any,
 ) {
   const specsForType = {
     type: 'set',
@@ -27,10 +28,11 @@ export async function updateInstanceSpecs(
         types.SET,
         instanceName,
         true,
+        session,
       )
     await setNsInfo(codeDir, nsInfo)
   } catch (error) {
     // console.log(error)
-    throw new Error(`problem updating specs: ${error}`)
+    throw new Error(`problem updating specs for instance '${instanceName}': ${error}`)
   }
 }

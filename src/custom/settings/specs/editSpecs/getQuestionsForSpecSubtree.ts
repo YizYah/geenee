@@ -66,7 +66,7 @@ function getChoicesForSpecChildren(
     }
 
     specChildrenChoices.push({
-      name: progress('add newTemplate'),
+      name: progress('add new'),
       value: {name: ADD_NEW, typeOfValue: '', required: false},
       short: ADD_NEW,
     })
@@ -109,8 +109,6 @@ function getChoicesForSpecChildren(
     short: DONE,
   })
 
-  // console.log(`** specChildrenChoices = ${JSON.stringify(specChildrenChoices, null, 1)}`)
-
   return specChildrenChoices
 }
 
@@ -120,6 +118,7 @@ export function getQuestionsForSpecSubtree(
   type: string,
   currentName: string,
   required: boolean,
+  session: any
 ) {
   const questions = []
 
@@ -156,6 +155,7 @@ export function getQuestionsForSpecSubtree(
     specsForType,
     currentName,
     EDIT,
+    session,
   )
   if (required) {
     questions.push(editQuestion)

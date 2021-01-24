@@ -1,5 +1,5 @@
 import {Configuration} from 'magicalstrings'
-import {Choice} from './settingsTypes'
+import {OriginalChoice} from './settingsTypes'
 const {exitOption, explanation, generalOption} = require('magicalstrings').constants.chalkColors
 const {menuChoices} = require('magicalstrings').constants
 
@@ -14,7 +14,7 @@ interface AnswersForStaticType {
 export function staticTypesFromConfig(config: Configuration) {
   const staticTypes = config.static
 
-  let staticTypeChoices: Choice[] = []
+  let staticTypeChoices: OriginalChoice[] = []
   if (staticTypes) {
     const types = Object.keys(staticTypes)
     staticTypeChoices = types.map((typeName: string) => {
@@ -30,7 +30,7 @@ export function staticTypesFromConfig(config: Configuration) {
 }
 
 export async function chooseStaticType(config: Configuration) {
-  const choiceList: Choice[] = staticTypesFromConfig(config)
+  const choiceList: OriginalChoice[] = staticTypesFromConfig(config)
   choiceList.unshift()
 
   const quit = {

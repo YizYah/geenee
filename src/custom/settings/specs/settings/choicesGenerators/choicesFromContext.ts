@@ -28,11 +28,9 @@ async function deleteInstance(context: StaticInstanceContext, answers: any): Pro
   if (!nsInfo.static) throw new Error('no static information stored in the settings file')
   if (!nsInfo.static[staticType])
     throw new Error(`no static information stored in the settings file for type ${staticType}`)
-  console.log(statusUpdate(`in delete for instance ${instance}... nsInfo.static[staticType]=${JSON.stringify(nsInfo.static[staticType])}`))
   if (!nsInfo.static[staticType][instance])
     throw new Error(`attempt to delete a nonexistent instance ${instance} of type ${staticType}`)
 
-  console.log(statusUpdate(`nsInfo.static[staticType][instance]=${JSON.stringify(nsInfo.static[staticType][instance])}`))
   delete nsInfo.static[staticType][instance]
   await setNsInfo(codeDir, nsInfo)
   // eslint-disable-next-line no-console
@@ -67,13 +65,12 @@ async function renameInstance(context: StaticInstanceContext, answers: MenuAnswe
     nsInfo.static[staticType][renameAnswers[NAME]].slug = renameAnswers[NAME]
     delete nsInfo.static[staticType][instance]
     await setNsInfo(codeDir, nsInfo)
-    console.log(statusUpdate(`${instance} updated...`))
   }
   answers[menuQuestionName].flow = FlowType.back // back up a level
   return context
 }
 
-async function updateSpecs(context: StaticInstanceContext, answers: MenuAnswers): Promise<StaticInstanceContext> {
+async function updateSpecs(context: StaticInstanceContext): Promise<StaticInstanceContext> {
   const {instance} = context
   const {nsInfo, staticType, config, codeDir, session} = context
   if (!nsInfo.static) throw new Error('no static information stored in the settings file')

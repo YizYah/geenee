@@ -3,7 +3,6 @@ import {ADD_NEW, AnswerValue, DELETE, DONE, EDIT, EDIT_OPTIONS, TO_EDIT, types} 
 const {attention, exitOption, generalOption, progress, userValue} = require('magicalstrings').constants.chalkColors
 import {extendedDescription} from './extendedDescription'
 import {askForValue} from './askForValue'
-import {Choice, FlowType} from '../../choiceBrew/types'
 
 const pluralize = require('pluralize')
 
@@ -121,7 +120,6 @@ export function getQuestionsForSpecSubtree(
   required: boolean,
   session: any
 ) {
-
   const questions = []
 
   if (type === types.TOP_LEVEL) {

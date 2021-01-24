@@ -23,7 +23,6 @@ async function createSession(codeDir: string) {
 export async function generalCallback(context: StaticContext) {
   const {config, nsInfo, codeDir} = context
   const session = await createSession(codeDir)
-  console.log(`in general callback.  session =${JSON.stringify(session)}`)
 
   const nsInfoGeneral = await updateSpecSubtree(
     nsInfo.general,

@@ -20,8 +20,6 @@ export async function updateInstanceSpecs(
   if (!nsInfo.static) return
   const specsForInstance = nsInfo.static[staticType][instanceName].specs
 
-  console.log(`in updateInstanceSpecs, staticType=${staticType}, instanceName=${instanceName}`)
-
   try {
     nsInfo.static[staticType][instanceName].specs =
       await updateSpecSubtree(

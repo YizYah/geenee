@@ -12,7 +12,6 @@ import {choicesFromContext} from '../specs/settings/choicesGenerators/choicesFro
 
 export async function updateStaticInstance2(context: StaticTypeContext,
   answers: MenuAnswers): Promise<StaticTypeContext> {
-  console.log(`answers in updateStaticInstance2 = ${JSON.stringify(answers)}`)
   const {staticType, nsInfo, codeDir} = context
   const instances: string = answers[menuQuestionName].value
   if (!nsInfo.static ||
@@ -28,7 +27,6 @@ export async function updateStaticInstance2(context: StaticTypeContext,
       choicesFromContext, prompt, superContext,
     )
   } catch (error) {
-    console.log(error)
     throw new Error(`in update static instance menu: ${error}`)
   }
 

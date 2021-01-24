@@ -21,7 +21,6 @@ export async function settingsMenu(
       generalMenuChoicesGenerator, prompt, context,
     )
   } catch (error) {
-    console.log(error)
-    // throw new Error(`in settings menu: ${error}`)
+    throw new Error(`in settings menu: ${error}`)
   }
 }

@@ -8,14 +8,13 @@ import {simpleValueEdit} from '../../editSpecs/simpleValueEdit'
 const inquirer = require('inquirer')
 
 export async function editSimpleSubTypeInstance(context: EditInstanceContext, answers: MenuAnswers): Promise<SetContext> {
-  const {specsForInstance, specsForType, currentName, type, session} = context
+  const {specsForInstance, specsForType, session} = context
   const {value} = answers[menuQuestionName]
   const currentSimpleSubtype = value.name
-  console.log(`in editSimpleSubTypeInstance: ${currentName}.  currentSimpleSubtype=${currentSimpleSubtype}`)
-  console.log(`in editSimpleSubTypeInstance: ${currentName}.  specsForType=${JSON.stringify(specsForType)}`)
+
   try {
     const {type} = specsForType
-    let currentSpecsObject = specsForType
+    let currentSpecsObject: any = specsForType
     if (type !== types.TOP_LEVEL && specsForType.contents)
       currentSpecsObject = specsForType.contents
     const currentSpecsForType = currentSpecsObject[currentSimpleSubtype]

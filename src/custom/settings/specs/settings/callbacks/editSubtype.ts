@@ -72,7 +72,6 @@ export async function editSubtype(context: SetContext, answers: MenuAnswers): Pr
     session,
   } = context
 
-  console.log(`in editSubtype for ${currentName}`)
   if (type === types.LIST) {
     await updateList(
       answers, specsForInstance, specsForType, currentName, session

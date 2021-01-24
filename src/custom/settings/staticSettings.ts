@@ -43,7 +43,6 @@ export async function staticSettings(
       staticTypeChoicesFromConfig, prompt, context,
     )
   } catch (error) {
-    console.log(error)
     throw new Error(`in static settings menu: ${error}`)
   }
   await setNsInfo(codeDir, context.nsInfo)

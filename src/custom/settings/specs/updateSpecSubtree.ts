@@ -78,15 +78,13 @@ export async function updateSpecSubtree(
   session: any,
 ) {
   try {
-    console.log(`in updateSpecSubtree, type = ${type}, specsForType= ${JSON.stringify(specsForType,null,1)}`)
     // if a set or list has no value, create the element
     if (!specsForInstance && (type in [types.SET, types.LIST, types.TOP_LEVEL])) {
       specsForInstance = await createSpecElement(specsForType)
     }
-    console.log(`in updateSpecSubtree, type = ${type}, specsForInstance= ${JSON.stringify(specsForInstance,null,1)}`)
 
     let context: SetContext = {
-      specsForInstance, specsForType, currentName, type, required, session
+      specsForInstance, specsForType, currentName, type, required, session,
     }
     const prompt = `How would you like to modify ${currentName}?`
     context = await menu(

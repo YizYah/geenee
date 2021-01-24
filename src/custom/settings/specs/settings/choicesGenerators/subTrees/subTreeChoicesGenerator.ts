@@ -17,16 +17,13 @@ function createChildrenChoices(
     subTypes = Object.keys(specsForType.contents)
     childSpecObject = specsForType.contents
   }
-  console.log(`in createChildrenChoices, type = ${type}. subTypes=${JSON.stringify(subTypes)} `)
-  console.log(`in createChildrenChoices, specsForType=${JSON.stringify(specsForType, null, 1)} `)
   return subTypes.map((subTypeName: string) => {
-    console.log(`in createChildrenChoices, for subType ${subTypeName}, childSpecObject[subTypeName]=${JSON.stringify(childSpecObject[subTypeName])} `)
     // @ts-ignore
     if (!childSpecObject[subTypeName]) throw new Error(`the type ${currentName} has no specs for ${subTypeName}`)
     // @ts-ignore
     const specsForTypeElement = childSpecObject[subTypeName]
     const instanceSpecsSubtreeElement = specsForInstance[subTypeName]
-    console.log(`in createChildrenChoices, specsForTypeElement=${JSON.stringify(specsForTypeElement)} `)
+
     return answerForSpecificSubtype(
       subTypeName,
       specsForTypeElement,
@@ -46,7 +43,7 @@ function addDeleteChoice(specChildrenChoices: Choice[], currentName: string) {
 }
 
 export function subTreeChoicesGenerator(context: SetContext): Choice[] {
-  const {specsForType, specsForInstance, type, required, currentName, session} = context
+  const {specsForType, specsForInstance, type, required, currentName} = context
   let specChildrenChoices: Choice[] = []
 
   if (type === types.LIST) {

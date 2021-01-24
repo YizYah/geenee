@@ -17,9 +17,11 @@ export async function settingsMenu(
     codeDir,
   }
   try {
-    await menu(
+    const newContext = await menu(
       generalMenuChoicesGenerator, prompt, context,
     )
+
+    return newContext.nsInfo
   } catch (error) {
     throw new Error(`in settings menu: ${error}`)
   }

@@ -38,12 +38,12 @@ Code **Re**generator.  Reapplies your template without losing your changes
 
 [//]: # ( ns__custom_start toc )
 <!-- toc -->
-* [:clipboard: Why](#why)
-* [:white_check_mark: Steps](#steps)
-* [:bulb: A Funny Sample](#a-funny-sample)
-* [:wrench: Usage](#usage)
-* [:zap: Commands](#commands)
-* [:heavy_exclamation_mark: Help](#help)
+* [:clipboard: Why](#clipboard-why)
+* [:white_check_mark: Steps](#white_check_mark-steps)
+* [:bulb: A Funny Sample](#bulb-a-funny-sample)
+* [:wrench: Usage](#wrench-usage)
+* [:zap: Commands](#zap-commands)
+* [:heavy_exclamation_mark: Help](#heavy_exclamation_mark-help)
 <!-- tocstop -->
 
 [//]: # ( ns__custom_end toc )

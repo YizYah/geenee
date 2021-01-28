@@ -1,10 +1,10 @@
 import {StaticTypeContext} from '../contexts'
-import {Choice, FlowType} from '../../../choiceBrew/types'
 import {addStaticInstance} from '../../../instances/addStaticInstance'
 import {updateStaticInstance2} from '../../../instances/updateStaticInstance2'
 
 const {menuChoices} = require('magicalstrings').constants
 const {generalOption, progress} = require('magicalstrings').constants.chalkColors
+import {Choice, FlowType} from 'choicebrew'
 
 export function staticInstancesFromNsInfo(context: StaticTypeContext): Choice[] {
   const {staticType, nsInfo} = context

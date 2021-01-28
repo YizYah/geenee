@@ -1,11 +1,10 @@
 const {setNsInfo} = require('magicalstrings').nsFiles
 import {StaticInstanceContext} from '../../settings/contexts'
 
-import {menuQuestionName} from '../../../choiceBrew/constants'
-import {Choice, FlowType, MenuAnswers} from '../../../choiceBrew/types'
+import {Choice, FlowType, MenuAnswers} from 'choicebrew'
 import {updateInstanceSpecs} from '../../updateInstanceSpecs'
 const {attention, generalOption, statusUpdate} = require('magicalstrings').constants.chalkColors
-
+const {setFlow} = require('choicebrew')
 const inquirer = require('inquirer')
 const actionTypes = {
   RENAME: 'rename',
@@ -37,7 +36,7 @@ async function deleteInstance(context: StaticInstanceContext, answers: any): Pro
   console.log(statusUpdate(`${instance} deleted... nsInfo.static[staticType]=${JSON.stringify(nsInfo.static[staticType])}`))
   context.nsInfo = nsInfo
 
-  answers[menuQuestionName].flow = FlowType.back // back up a level
+  setFlow(answers, FlowType.back) // back up a level
   return context
 }
 
@@ -66,7 +65,7 @@ async function renameInstance(context: StaticInstanceContext, answers: MenuAnswe
     delete nsInfo.static[staticType][instance]
     await setNsInfo(codeDir, nsInfo)
   }
-  answers[menuQuestionName].flow = FlowType.back // back up a level
+  setFlow(answers, FlowType.back) // back up a level
   return context
 }
 

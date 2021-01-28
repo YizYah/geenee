@@ -1,11 +1,14 @@
 import {Configuration} from 'magicalstrings'
 import {NsInfo}  from 'magicalstrings'
 import {updateStaticTypeInstances2} from './specs/settings/callbacks/updateStaticTypeInstances2'
-import {Choice, FlowType} from './choiceBrew/types'
-import {menu} from './choiceBrew/menu'
-import {explanation, generalOption} from 'magicalstrings/lib/exports/constants/chalkColors'
-import {setNsInfo} from 'magicalstrings/lib/exports/nsFiles/setNsInfo'
+import {Choice, FlowType} from 'choicebrew'
+
+const {menu} = require('choicebrew')
+
 import {StaticContext} from './specs/settings/contexts'
+
+const {explanation, generalOption} = require('magicalstrings').constants.chalkColors
+const {setNsInfo} = require('magicalstrings').nsFiles
 
 export function staticTypeChoicesFromConfig(context: StaticContext): Choice[] {
   const {config} = context

@@ -1,9 +1,9 @@
 import {Configuration, NsInfo} from 'magicalstrings'
-import {menu} from './choiceBrew/menu'
 import {StaticContext} from './specs/settings/contexts'
 
 import {generalMenuChoicesGenerator} from './specs/settings/choicesGenerators/generalMenuChoicesGenerator'
 
+const {menu} = require('choicebrew')
 const prompt = 'What settings would you like to change?'
 
 export async function settingsMenu(

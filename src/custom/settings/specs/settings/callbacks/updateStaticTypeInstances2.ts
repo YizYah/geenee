@@ -1,11 +1,10 @@
-import {MenuAnswers} from '../../../choiceBrew/types'
-import {menu} from '../../../choiceBrew/menu'
-import {menuQuestionName} from '../../../choiceBrew/constants'
+import {MenuAnswers} from 'choicebrew'
 import {StaticContext, StaticTypeContext} from '../contexts'
 import {staticInstancesFromNsInfo} from '../choicesGenerators/staticInstancesFromNsInfo'
-
+const {getValue} = require('choicebrew').functions
 const chalk = require('chalk')
 const {generalOption} = require('magicalstrings').constants.chalkColors
+const {menu} = require('choicebrew').functions
 const {setNsInfo} = require('magicalstrings').nsFiles
 
 const INSTANCE = 'staticInstance'
@@ -21,7 +20,7 @@ export async function updateStaticTypeInstances2(context: StaticContext,
     nsInfo,
     codeDir,
   } = context
-  const staticType: string = answers[menuQuestionName].value
+  const staticType: string = getValue(answers)
   // eslint-disable-next-line no-console
   console.log(`Update the instances for static type ${staticType}.`)
 

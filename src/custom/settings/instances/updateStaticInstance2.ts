@@ -1,19 +1,16 @@
-// import {Configuration, NsInfo} from 'magicalstrings'
-
-import {menuQuestionName} from '../choiceBrew/constants'
-
 export const {setNsInfo} = require('magicalstrings').nsFiles
 
-import {MenuAnswers} from '../choiceBrew/types'
-// import {addStaticInstance} from './addStaticInstance'
-import {menu} from '../choiceBrew/menu'
+import {MenuAnswers} from 'choicebrew'
 import {StaticInstanceContext, StaticTypeContext} from '../specs/settings/contexts'
 import {choicesFromContext} from '../specs/settings/choicesGenerators/choicesFromContext'
+
+const {getValue} = require('choicebrew').functions
+const {menu} = require('choicebrew').functions
 
 export async function updateStaticInstance2(context: StaticTypeContext,
   answers: MenuAnswers): Promise<StaticTypeContext> {
   const {staticType, nsInfo, codeDir} = context
-  const instances: string = answers[menuQuestionName].value
+  const instances: string = getValue(answers)
   if (!nsInfo.static ||
     !nsInfo.static[staticType] ||
     !nsInfo.static[staticType][instances]

@@ -1,7 +1,8 @@
 import {Specs} from 'magicalstrings'
 import {types} from '../../../../types'
 import {extendedDescription} from '../../../editSpecs/extendedDescription'
-import {FlowType} from '../../../../choiceBrew/types'
+import {FlowType} from 'choicebrew'
+
 import {editSubtype} from '../../callbacks/editSubtype'
 import {editSimpleSubTypeInstance} from '../../callbacks/editSimpleSubTypeInstance'
 

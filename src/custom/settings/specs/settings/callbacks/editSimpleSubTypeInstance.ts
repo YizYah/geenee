@@ -1,15 +1,15 @@
 import {EditInstanceContext, SetContext} from '../contexts'
-import {MenuAnswers} from '../../../choiceBrew/types'
-import {menuQuestionName} from '../../../choiceBrew/constants'
+import {MenuAnswers} from 'choicebrew'
 import {askForValue} from '../../editSpecs/askForValue'
 import {EDIT, types} from '../../../types'
 import {simpleValueEdit} from '../../editSpecs/simpleValueEdit'
 
+const {getValue} = require('choicebrew').functions
 const inquirer = require('inquirer')
 
 export async function editSimpleSubTypeInstance(context: EditInstanceContext, answers: MenuAnswers): Promise<SetContext> {
   const {specsForInstance, specsForType, session} = context
-  const {value} = answers[menuQuestionName]
+  const value = getValue(answers)
   const currentSimpleSubtype = value.name
 
   try {

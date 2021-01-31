@@ -1,6 +1,6 @@
 import {StaticTypeContext} from '../specs/settings/contexts'
 
-const setNsInfo = require('magicalstrings').nsFiles.setNsInfo
+const {setNsInfo} = require('magicalstrings').nsFiles
 const inquirer = require('inquirer')
 
 export async function addStaticInstance(context: StaticTypeContext): Promise<StaticTypeContext> {

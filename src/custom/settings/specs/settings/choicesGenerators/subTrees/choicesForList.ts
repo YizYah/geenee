@@ -1,5 +1,4 @@
 import {Specs, SpecSet} from 'magicalstrings'
-import {Choice, FlowType} from '../../../../choiceBrew/types'
 import {editSubtype} from '../../callbacks/editSubtype'
 import {menuChoices} from 'magicalstrings/lib/exports/constants'
 import {ADD_NEW, DELETE, types} from '../../../../types'
@@ -8,6 +7,7 @@ import {deleteInstance} from '../../callbacks/deleteInstance'
 import {explanation} from 'magicalstrings/lib/exports/constants/chalkColors'
 
 const {attention, generalOption, progress} = require('magicalstrings').constants.chalkColors
+import {Choice, FlowType} from 'choicebrew'
 
 export function choicesForList(
   specsForInstance: any,

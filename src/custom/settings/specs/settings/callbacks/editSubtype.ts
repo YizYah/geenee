@@ -1,9 +1,9 @@
-import {MenuAnswers} from '../../../choiceBrew/types'
+import {MenuAnswers} from 'choicebrew'
 import {Specs, SpecSet} from 'magicalstrings'
-import {menuQuestionName} from '../../../choiceBrew/constants'
 import {updateSpecSubtree} from '../../updateSpecSubtree'
 import {types} from '../../../types'
 import {SetContext} from '../contexts'
+const {getValue} = require('choicebrew').functions
 
 async function updateList(
   answers: MenuAnswers,
@@ -13,7 +13,7 @@ async function updateList(
   session: any,
 ) {
   // in a list, the index is used rather than the name
-  const {name, index} = answers[menuQuestionName].value
+  const {name, index} = getValue(answers)
   // @ts-ignore
   const specsForChildInstance = specsForInstance[index]
   const specsForChildType = {...specsForType}
@@ -46,7 +46,7 @@ async function updateSet(
   topLevel = false,
   session: any,
 ) {
-  const {name, typeOfValue, required} = answers[menuQuestionName].value
+  const {name, typeOfValue, required} = getValue(answers)
 
   const specsForChildInstance = specsForInstance[name]
   // @ts-ignore

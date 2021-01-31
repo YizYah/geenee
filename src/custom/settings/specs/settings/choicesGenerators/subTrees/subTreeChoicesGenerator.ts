@@ -1,10 +1,10 @@
 import {Specs, SpecSet} from 'magicalstrings'
 import {DELETE, types} from '../../../../types'
-import {Choice, FlowType} from '../../../../choiceBrew/types'
 import {SetContext} from '../../contexts'
 import {deleteInstance} from '../../callbacks/deleteInstance'
 import {answerForSpecificSubtype} from './answerForSpecificSubtype'
 import {choicesForList} from './choicesForList'
+import {Choice, FlowType} from 'choicebrew'
 
 const {attention} = require('magicalstrings').constants.chalkColors
 

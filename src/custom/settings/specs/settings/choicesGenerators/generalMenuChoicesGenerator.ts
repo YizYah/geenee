@@ -1,4 +1,4 @@
-import {Choice, FlowType} from '../../../choiceBrew/types'
+import {Choice, FlowType} from 'choicebrew'
 
 import {generalCallback} from '../callbacks/generalCallback'
 import {staticCallback} from '../callbacks/staticCallback'

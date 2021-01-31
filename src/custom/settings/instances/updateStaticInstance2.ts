@@ -4,8 +4,8 @@ import {MenuAnswers} from 'choicebrew'
 import {StaticInstanceContext, StaticTypeContext} from '../specs/settings/contexts'
 import {choicesFromContext} from '../specs/settings/choicesGenerators/choicesFromContext'
 
-const {getValue} = require('choicebrew')
-const {menu} = require('choicebrew')
+const {getValue} = require('choicebrew').functions
+const {menu} = require('choicebrew').functions
 
 export async function updateStaticInstance2(context: StaticTypeContext,
   answers: MenuAnswers): Promise<StaticTypeContext> {

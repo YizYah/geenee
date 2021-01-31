@@ -8,7 +8,7 @@ import {createSpecElement} from './specCreation/createSpecElement'
 // import {SetContext, StaticTypeContext} from '../contexts'
 import {SetContext} from './settings/contexts'
 // import {generalOption} from 'magicalstrings/lib/exports/constants/chalkColors'
-const {menu} = require('choicebrew')
+const {menu} = require('choicebrew').functions
 
 // import {setNsInfo} from 'magicalstrings/lib/exports/nsFiles/setNsInfo'
 import {subTreeChoicesGenerator} from './settings/choicesGenerators/subTrees/subTreeChoicesGenerator'

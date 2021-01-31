@@ -1,10 +1,10 @@
 import {MenuAnswers} from 'choicebrew'
 import {StaticContext, StaticTypeContext} from '../contexts'
 import {staticInstancesFromNsInfo} from '../choicesGenerators/staticInstancesFromNsInfo'
-const {getValue} = require('choicebrew')
+const {getValue} = require('choicebrew').functions
 const chalk = require('chalk')
 const {generalOption} = require('magicalstrings').constants.chalkColors
-const {menu} = require('choicebrew')
+const {menu} = require('choicebrew').functions
 const {setNsInfo} = require('magicalstrings').nsFiles
 
 const INSTANCE = 'staticInstance'

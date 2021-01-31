@@ -3,7 +3,7 @@ import {StaticContext} from './specs/settings/contexts'
 
 import {generalMenuChoicesGenerator} from './specs/settings/choicesGenerators/generalMenuChoicesGenerator'
 
-const {menu} = require('choicebrew')
+const {menu} = require('choicebrew').functions
 const prompt = 'What settings would you like to change?'
 
 export async function settingsMenu(

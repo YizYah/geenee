@@ -1,10 +1,10 @@
 const {setNsInfo} = require('magicalstrings').nsFiles
-import {StaticInstanceContext} from '../../settings/contexts'
+import {StaticInstanceContext} from '../contexts'
 
 import {Choice, FlowType, MenuAnswers} from 'choicebrew'
 import {updateInstanceSpecs} from '../../updateInstanceSpecs'
 const {attention, generalOption, statusUpdate} = require('magicalstrings').constants.chalkColors
-const {setFlow} = require('choicebrew')
+const {setFlow} = require('choicebrew').functions
 const inquirer = require('inquirer')
 const actionTypes = {
   RENAME: 'rename',

@@ -3,7 +3,7 @@ import {NsInfo}  from 'magicalstrings'
 import {updateStaticTypeInstances2} from './specs/settings/callbacks/updateStaticTypeInstances2'
 import {Choice, FlowType} from 'choicebrew'
 
-const {menu} = require('choicebrew')
+const {menu} = require('choicebrew').functions
 
 import {StaticContext} from './specs/settings/contexts'
 

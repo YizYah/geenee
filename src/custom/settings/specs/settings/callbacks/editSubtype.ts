@@ -3,7 +3,7 @@ import {Specs, SpecSet} from 'magicalstrings'
 import {updateSpecSubtree} from '../../updateSpecSubtree'
 import {types} from '../../../types'
 import {SetContext} from '../contexts'
-const {getValue} = require('choicebrew')
+const {getValue} = require('choicebrew').functions
 
 async function updateList(
   answers: MenuAnswers,

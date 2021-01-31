@@ -4,7 +4,7 @@ import {askForValue} from '../../editSpecs/askForValue'
 import {EDIT, types} from '../../../types'
 import {simpleValueEdit} from '../../editSpecs/simpleValueEdit'
 
-const {getValue} = require('choicebrew')
+const {getValue} = require('choicebrew').functions
 const inquirer = require('inquirer')
 
 export async function editSimpleSubTypeInstance(context: EditInstanceContext, answers: MenuAnswers): Promise<SetContext> {

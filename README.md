@@ -211,9 +211,9 @@ _See code: [src/commands/settings.ts](https://github.com/YizYah/geenee/blob/v0.1
 
 # :heavy_exclamation_mark: Help
 
-* Read our [documentation][1]
-* Post questions on our [Community](https://spectrum.chat/ns-flip)
-*  [open issues](https://github.com/NoStackApp/ns-flip/issues/new)
+* Read our [documentation](https://geenee.nostack.net/)
+* [Open issues](https://github.com/YizYah/geenee/issues/new)
+* Post questions on [discussions](https://github.com/YizYah/geenee/discussions/) 
 
 [//]: # ( ns__custom_end commands )
 

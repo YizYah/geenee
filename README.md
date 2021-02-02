@@ -213,7 +213,7 @@ _See code: [src/commands/settings.ts](https://github.com/YizYah/geenee/blob/v0.1
 
 * Read our [documentation](https://geenee.nostack.net/)
 * [Open issues](https://github.com/YizYah/geenee/issues/new)
-* Post questions on our [Community](https://spectrum.chat/ns-flip)
+* Post questions on [discussions](https://github.com/YizYah/geenee/discussions/) 
 
 [//]: # ( ns__custom_end commands )
 

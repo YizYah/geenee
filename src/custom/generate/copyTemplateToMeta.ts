@@ -9,7 +9,13 @@ export async function copyTemplateToMeta(codeTemplateDir: string, templateDir: s
     await fs.ensureDir(codeTemplateDir)
     await fs.emptyDir(codeTemplateDir)
     // copyProjectDirectory(templateDir, codeTemplateDir)
-    await fs.copy(templateDir, codeTemplateDir)
+    await fs.copy(
+      templateDir, codeTemplateDir, {
+        filter: function (path: any) {
+          return path.indexOf('.git') === -1
+        },
+      }
+    )
     const templatePackageJsonPath = `${codeTemplateDir}/package.json`
     if (await fs.pathExists(templatePackageJsonPath)) {
       await execa(

@@ -1,6 +1,6 @@
 {
   "name": "geenee",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "code regenerator. reapplies templates without losing custom changes",
   "main": "lib/index.ts",
   "scripts": {
@@ -52,7 +52,7 @@
     "typescript": "^3.9.7"
   },
   "bin": {
-    "geenee": "./bin/run"
+    "geenee": "bin/run"
   },
   "bugs": "https://github.com/YizYah/geenee/issues",
   "engines": {

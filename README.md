@@ -98,7 +98,7 @@ $ npm install -g geenee
 $ geenee COMMAND
 running command...
 $ geenee (-v|--version|version)
-geenee/0.1.8 linux-x64 node-v14.9.0
+geenee/0.1.8 linux-x64 node-v15.8.0
 $ geenee --help [COMMAND]
 USAGE
   $ geenee COMMAND

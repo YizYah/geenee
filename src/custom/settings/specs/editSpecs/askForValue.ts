@@ -1,6 +1,6 @@
 import {extendedDescription} from './extendedDescription'
 import {Specs} from 'magicalstrings'
-import {replaceGlobalObjectValues} from './replaceGlobalValuesInObject'
+import {replaceGlobalObjectValues} from './replaceGlobalObjectValues'
 const {attention} = require('magicalstrings').constants.chalkColors
 
 export function askForValue(

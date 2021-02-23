@@ -101,8 +101,13 @@ export async function createStarter(
   const setup = new Listr(starterCreationTaskList)
   try {
     await setup.run()
+  } catch (error) {
+    throw new Error(`cannot run setup at ${codeDir}: ${error}`)
+  }
+
+  try {
     await installDependencies.run()
   } catch (error) {
-    throw new Error(`cannot create sample app at ${codeDir}: ${error}`)
+    throw new Error(`cannot install dependencies at ${codeDir}: ${error}`)
   }
 }

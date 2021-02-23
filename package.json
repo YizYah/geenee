@@ -24,6 +24,7 @@
     "chalk": "^4.1.0",
     "choicebrew": "^1.0.2",
     "deep-object-diff": "^1.1.0",
+    "dynamapping": "^1.0.1",
     "execa": "^5.0.0",
     "fs-extra": "^9.0.1",
     "geenee-check": "0.0.2",

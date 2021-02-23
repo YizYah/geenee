@@ -1,8 +1,8 @@
 import {CommandSpec} from 'magicalstrings'
 import {convertCommandArgs} from './convertCommandArgs'
 import {convertCommandOptions} from './convertCommandOptions'
-import {replaceGlobalValuesInObject} from '../../dynamapper/replaceGlobalValuesInObject'
-
+// import {replaceGlobalValuesInObject} from '../../dynamapper/replaceGlobalValuesInObject'
+const dynamapping = require('dynamapping')
 const chalk = require('chalk')
 const execa = require('execa')
 
@@ -11,7 +11,7 @@ export function preCommandsTaskList(
   starterDir: string,
   session: any
 ) {
-  const preCommandsInfo = preCommands.map(object => replaceGlobalValuesInObject(
+  const preCommandsInfo = preCommands.map(object => dynamapping(
     object, session, {}
   )).filter(x => !x.prevent)
 

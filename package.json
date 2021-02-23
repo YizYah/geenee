@@ -1,6 +1,6 @@
 {
   "name": "geenee",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "code regenerator. reapplies templates without losing custom changes",
   "main": "lib/index.ts",
   "scripts": {

@@ -1,7 +1,6 @@
 import {CommandSpec} from 'magicalstrings'
 import {convertCommandArgs} from './convertCommandArgs'
 import {convertCommandOptions} from './convertCommandOptions'
-// import {replaceGlobalValuesInObject} from '../../dynamapper/replaceGlobalValuesInObject'
 const dynamapping = require('dynamapping')
 const chalk = require('chalk')
 const execa = require('execa')

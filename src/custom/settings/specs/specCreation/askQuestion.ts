@@ -1,6 +1,5 @@
 import {askForValue} from '../editSpecs/askForValue'
-import {replaceGlobalValuesInObject} from '../../../dynamapper/replaceGlobalValuesInObject'
-
+const dynamapping = require('dynamapping')
 const inquirer = require('inquirer')
 
 export async function askQuestion(
@@ -11,7 +10,7 @@ export async function askQuestion(
 ) {
   let questions
   try {
-    const questionKeys = replaceGlobalValuesInObject(
+    const questionKeys = dynamapping(
       subTypeInfo, session, answers
     )
     questions = [

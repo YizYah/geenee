@@ -1,6 +1,6 @@
 import {extendedDescription} from './extendedDescription'
 import {Specs} from 'magicalstrings'
-import {replaceGlobalObjectValues} from '../../../dynamapper/replaceGlobalValuesInObject'
+const dynamapping = require('dynamapping')
 const {attention} = require('magicalstrings').constants.chalkColors
 
 export function askForValue(
@@ -13,7 +13,7 @@ export function askForValue(
   const name = questionName
 
   const {type, description, choices, required} = specsForType
-  const defaultAnswer = specsForInstance || replaceGlobalObjectValues(
+  const defaultAnswer = specsForInstance || dynamapping(
     specsForType.default, session, {}
   )
   let fullDescription = '[' + extendedDescription(currentName, description) + ']'

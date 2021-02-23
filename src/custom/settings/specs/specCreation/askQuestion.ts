@@ -1,5 +1,5 @@
 import {askForValue} from '../editSpecs/askForValue'
-import {replaceGlobalValuesInObject} from './replaceGlobalValuesInObject'
+import {replaceGlobalValuesInObject} from '../../../dynamapper/replaceGlobalValuesInObject'
 
 const inquirer = require('inquirer')
 

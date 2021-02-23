@@ -1,7 +1,9 @@
-const {commands, dirNames, docPages, links} = require('magicalstrings').constants
+import {createNewCode} from './createNewCode'
+
+const {commands, dirNames, fileNames, docPages, links, suffixes} = require('magicalstrings').constants
 
 import {copyTemplateToMeta} from './copyTemplateToMeta'
-import {createStarterAndNewCode} from './createStarterAndNewCode'
+import {createStarter} from '../headStart/createStarter'
 
 const generateCode = require('geenee-spell')
 const fs = require('fs-extra')
@@ -19,7 +21,10 @@ export async function createCodeBase(
   }
 
   if (!templateDir && noSetup) {
-    throw new Error('the noSetup flag cannot be used unless a template is specified.')
+    throw new Error('you called \'generate\' with the \'--noSetup\' flag without specifying ' +
+      'a template.  Please either remove the \'--noSetup\' or provide a template ' +
+      'with the \'-t\' flag. ' +
+      `See ${links.DOCUMENTATION}/${docPages.BUILDING_CODE_BASE}.`)
   }
 
   if (!templateDir && !existsCodeTemplateDir) {
@@ -35,13 +40,6 @@ export async function createCodeBase(
       `See ${links.DOCUMENTATION}/${docPages.BUILDING_CODE_BASE}.`)
   }
 
-  if (!templateDir && noSetup) {
-    throw new Error('you called \'generate\' with the \'--noSetup\' flag without specifying ' +
-      'a template.  Please either remove the \'--noSetup\' or provide a template ' +
-      'with the \'-t\' flag. ' +
-      `See ${links.DOCUMENTATION}/${docPages.BUILDING_CODE_BASE}.`)
-  }
-
   // eslint-disable-next-line @typescript-eslint/no-unused-vars,@typescript-eslint/no-empty-function
   if (templateDir) {
     await copyTemplateToMeta(codeTemplateDir, templateDir)
@@ -53,9 +51,16 @@ export async function createCodeBase(
   }
 
   if (templateDir && (!existsCodeTemplateDir || !noSetup)) {
-    await createStarterAndNewCode(
+    await createStarter(
       templateDir, codeDir, session
     )
+    const nsFilePath = `${codeDir}/${dirNames.META}/${fileNames.NS_FILE}`
+    if (!await fs.pathExists(nsFilePath)) {
+      // if the settings file doesn't exist yet then it's a brand new Template...
+      const starterDir = codeDir + suffixes.STARTUP_DIR
+      const newAppTasks = await createNewCode(codeDir, starterDir)// , finalTemplateDir)
+      await newAppTasks.run()
+    }
   }
 
   await generateCode(

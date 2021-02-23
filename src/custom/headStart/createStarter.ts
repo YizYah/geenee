@@ -1,31 +1,19 @@
 import {installDevPackagesTaskList} from './setup/installDevPackagesTaskList'
-const {docPages, dirNames, fileNames, links, suffixes} = require('magicalstrings').constants
-import {Configuration} from 'magicalstrings'
-const getConfig = require('magicalstrings').configs.getConfig
-import {CustomCodeRepository}  from 'magicalstrings'
-const {dirOptions} = require('magicalstrings').dirOptions
-import {createNewCode} from './createNewCode'
+import {Configuration, CustomCodeRepository, NsInfo} from 'magicalstrings'
 import {installMainPackagesTaskList} from './setup/installMainPackagesTaskList'
 import {preCommandsTaskList} from './setup/preCommandsTaskList'
 import {interactiveSequence} from './setup/interactiveSequence'
-const setNsInfo = require('magicalstrings').nsFiles.setNsInfo
-import {NsInfo}  from 'magicalstrings'
+import {checkFolder} from './checkFolder'
 
+const {docPages, dirNames, fileNames, links, suffixes} = require('magicalstrings').constants
 const fs = require('fs-extra')
 const Listr = require('listr')
 const yaml = require('js-yaml')
+const getConfig = require('magicalstrings').configs.getConfig
+const {dirOptions} = require('magicalstrings').dirOptions
+const setNsInfo = require('magicalstrings').nsFiles.setNsInfo
 
-async function checkFolder(starterDir: string) {
-  if (await fs.pathExists(starterDir)) {
-    try {
-      await fs.remove(starterDir)
-    } catch (error) {
-      throw new Error(`cannot remove the starter ${starterDir}: ${error}`)
-    }
-  }
-}
-
-export async function createStarterAndNewCode(
+export async function createStarter(
   templateDir: string,
   codeDir: string,
   session: any,
@@ -114,12 +102,6 @@ export async function createStarterAndNewCode(
   try {
     await setup.run()
     await installDependencies.run()
-    const nsFilePath = `${codeDir}/${dirNames.META}/${fileNames.NS_FILE}`
-    if (!await fs.pathExists(nsFilePath)) {
-      // if the settings file doesn't exist yet then it's brand newTemplate...
-      const newAppTasks = await createNewCode(codeDir, starterDir)// , finalTemplateDir)
-      await newAppTasks.run()
-    }
   } catch (error) {
     throw new Error(`cannot create sample app at ${codeDir}: ${error}`)
   }

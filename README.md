@@ -105,7 +105,7 @@ $ npm install -g geenee
 $ geenee COMMAND
 running command...
 $ geenee (-v|--version|version)
-geenee/0.1.11 win32-x64 node-v14.15.5
+geenee/0.1.12 win32-x64 node-v14.15.5
 $ geenee --help [COMMAND]
 USAGE
   $ geenee COMMAND
@@ -159,7 +159,7 @@ EXAMPLE
   $ geenee check sampleCode
 ```
 
-_See code: [src/commands/check.ts](https://github.com/YizYah/geenee/blob/v0.1.11/src/commands/check.ts)_
+_See code: [src/commands/check.ts](https://github.com/YizYah/geenee/blob/v0.1.12/src/commands/check.ts)_
 
 ## `geenee generate CODE`
 
@@ -186,7 +186,7 @@ EXAMPLE
   You have executed the generate command...
 ```
 
-_See code: [src/commands/generate.ts](https://github.com/YizYah/geenee/blob/v0.1.11/src/commands/generate.ts)_
+_See code: [src/commands/generate.ts](https://github.com/YizYah/geenee/blob/v0.1.12/src/commands/generate.ts)_
 
 ## `geenee help [COMMAND]`
 
@@ -224,7 +224,7 @@ EXAMPLE
   You have executed the settings command...
 ```
 
-_See code: [src/commands/settings.ts](https://github.com/YizYah/geenee/blob/v0.1.11/src/commands/settings.ts)_
+_See code: [src/commands/settings.ts](https://github.com/YizYah/geenee/blob/v0.1.12/src/commands/settings.ts)_
 <!-- commandsstop -->
 * [`geenee check CODE`](#geenee-check-code)
 * [`geenee generate CODE`](#geenee-generate-code)

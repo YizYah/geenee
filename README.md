@@ -45,6 +45,13 @@ Code **Re**generator.  Reapplies your template without losing your changes
 * [<a name="zap-commands"></a>:zap: Commands](#a-namezap-commandsazap-commands)
 * [<a name="heavy_exclamation_mark-help"></a>:heavy_exclamation_mark: Help](#a-nameheavy_exclamation_mark-helpaheavy_exclamation_mark-help)
 <!-- tocstop -->
+* [<a name="clipboard-why"></a>:clipboard: Why](#a-nameclipboard-whyaclipboard-why)
+* [<a name="white_check_mark-steps"></a>:white_check_mark: Steps](#a-namewhite_check_mark-stepsawhite_check_mark-steps)
+* [<a name="bulb-a-funny-sample"></a>:bulb: A Funny Sample](#a-namebulb-a-funny-sampleabulb-a-funny-sample)
+* [<a name="wrench-usage"></a>:wrench: Usage](#a-namewrench-usageawrench-usage)
+* [<a name="zap-commands"></a>:zap: Commands](#a-namezap-commandsazap-commands)
+* [<a name="heavy_exclamation_mark-help"></a>:heavy_exclamation_mark: Help](#a-nameheavy_exclamation_mark-helpaheavy_exclamation_mark-help)
+<!-- tocstop -->
 
 [//]: # ( ns__custom_end toc )
 
@@ -98,6 +105,18 @@ $ npm install -g geenee
 $ geenee COMMAND
 running command...
 $ geenee (-v|--version|version)
+geenee/0.1.14 win32-x64 node-v14.15.5
+$ geenee --help [COMMAND]
+USAGE
+  $ geenee COMMAND
+...
+```
+<!-- usagestop -->
+```sh-session
+$ npm install -g geenee
+$ geenee COMMAND
+running command...
+$ geenee (-v|--version|version)
 geenee/0.1.13 win32-x64 node-v14.15.5
 $ geenee --help [COMMAND]
 USAGE
@@ -141,6 +160,96 @@ USAGE
 
 [//]: # ( ns__custom_start commands )
 <!-- commands -->
+* [`geenee check CODE`](#geenee-check-code)
+* [`geenee generate CODE`](#geenee-generate-code)
+* [`geenee help [COMMAND]`](#geenee-help-command)
+* [`geenee settings CODE`](#geenee-settings-code)
+
+## `geenee check CODE`
+
+checks that the code has been entered safely, meaning that regeneration won't lose any changes
+
+```
+USAGE
+  $ geenee check CODE
+
+ARGUMENTS
+  CODE  path to the code base to check
+
+OPTIONS
+  -h, --help  show CLI help
+
+EXAMPLE
+  $ geenee check sampleCode
+```
+
+_See code: [src/commands/check.ts](https://github.com/YizYah/geenee/blob/v0.1.14/src/commands/check.ts)_
+
+## `geenee generate CODE`
+
+generates code based on a template and a settings file. To set the template, you need the template flag.
+
+```
+USAGE
+  $ geenee generate CODE
+
+ARGUMENTS
+  CODE  path to the code base to generate
+
+OPTIONS
+  -h, --help               show CLI help
+
+  -n, --noSetup            Do not update the startup routine (this is only relevant when the template flag is also
+                           used). Saves a lot of time for a template developer.
+
+  -t, --template=template  Template directory. Will generate from the template, and will override any prior template or
+                           template version used.
+
+EXAMPLE
+  $ geenee generate sampleCode -t sampleTemplate -n
+  You have executed the generate command...
+```
+
+_See code: [src/commands/generate.ts](https://github.com/YizYah/geenee/blob/v0.1.14/src/commands/generate.ts)_
+
+## `geenee help [COMMAND]`
+
+display help for geenee
+
+```
+USAGE
+  $ geenee help [COMMAND]
+
+ARGUMENTS
+  COMMAND  command to show help for
+
+OPTIONS
+  --all  see all commands in CLI
+```
+
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2/src/commands/help.ts)_
+
+## `geenee settings CODE`
+
+change your settings for the next generation
+
+```
+USAGE
+  $ geenee settings CODE
+
+ARGUMENTS
+  CODE  path to the code base
+
+OPTIONS
+  -h, --help  show CLI help
+
+EXAMPLE
+  $ geenee settings sampleCode
+  You have executed the settings command...
+```
+
+_See code: [src/commands/settings.ts](https://github.com/YizYah/geenee/blob/v0.1.14/src/commands/settings.ts)_
+<!-- commandsstop -->
 * [`geenee check CODE`](#geenee-check-code)
 * [`geenee generate CODE`](#geenee-generate-code)
 * [`geenee help [COMMAND]`](#geenee-help-command)

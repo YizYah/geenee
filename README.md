@@ -45,13 +45,6 @@ Code **Re**generator.  Reapplies your template without losing your changes
 * [<a name="zap-commands"></a>:zap: Commands](#a-namezap-commandsazap-commands)
 * [<a name="heavy_exclamation_mark-help"></a>:heavy_exclamation_mark: Help](#a-nameheavy_exclamation_mark-helpaheavy_exclamation_mark-help)
 <!-- tocstop -->
-* [:clipboard: Why](#clipboard-why)
-* [:white_check_mark: Steps](#white_check_mark-steps)
-* [:bulb: A Funny Sample](#bulb-a-funny-sample)
-* [:wrench: Usage](#wrench-usage)
-* [:zap: Commands](#zap-commands)
-* [:heavy_exclamation_mark: Help](#heavy_exclamation_mark-help)
-<!-- tocstop -->
 
 [//]: # ( ns__custom_end toc )
 

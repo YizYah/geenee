@@ -57,6 +57,7 @@ async run() {
   const {template, noSetup} = flags
   /* ns__custom_start run */
   const codeDir = resolveDir(code)
+
   const templateDir = resolveDir(template)
   try {
     await createCodeBase(

@@ -46,6 +46,8 @@ export async function createCodeBase(
       `See ${links.DOCUMENTATION}/${docPages.BUILDING_CODE_BASE}.`)
   }
 
+  const starterDir = codeDir + suffixes.STARTUP_DIR
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars,@typescript-eslint/no-empty-function
   if (templateDir) {
     await copyTemplateToMeta(codeTemplateDir, templateDir)
@@ -60,7 +62,7 @@ export async function createCodeBase(
     const config: Configuration = await getConfig(templateDir)
     const {setupSequence} = config
     await createStarter(
-      setupSequence, codeDir, session
+      setupSequence, starterDir, session
     )
 
     let nsInfo: NsInfo
@@ -73,7 +75,6 @@ export async function createCodeBase(
       throw error
     }
 
-    const starterDir = codeDir + suffixes.STARTUP_DIR
     const metaDir = `${starterDir}/${dirNames.META}`
     const customCode = `${metaDir}/${fileNames.CUSTOM_CODE_FILE}`
     if (nsInfo) nsInfo.starter = starterDir

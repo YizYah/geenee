@@ -1,6 +1,6 @@
 {
   "name": "geenee",
-  "version": "0.1.10",
+  "version": "0.1.15",
   "description": "code regenerator. reapplies templates without losing custom changes",
   "main": "lib/index.ts",
   "scripts": {
@@ -25,12 +25,12 @@
     "choicebrew": "^1.0.2",
     "custom-jeans": "0.0.5",
     "deep-object-diff": "^1.1.0",
-    "dynamapping": "^1.0.1",
+    "dynamapping": "^1.0.2",
     "execa": "^5.0.0",
     "fs-extra": "^9.0.1",
     "geenee-check": "0.0.4",
-    "geenee-rate": "0.0.5",
-    "geenee-spell": "0.0.11",
+    "geenee-rate": "^0.1.2",
+    "geenee-spell": "0.0.13",
     "head-starter": "^1.1.3",
     "inquirer": "^7.3.3",
     "js-yaml": "^3.14.1",

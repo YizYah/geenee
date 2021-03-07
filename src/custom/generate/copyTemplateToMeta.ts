@@ -12,7 +12,7 @@ export async function copyTemplateToMeta(codeTemplateDir: string, templateDir: s
     await fs.copy(
       templateDir, codeTemplateDir, {
         filter: function (path: any) {
-          return path.indexOf('.git') === -1
+          return path.indexOf('.git/') === -1
         },
       }
     )

@@ -38,13 +38,6 @@ Code **Re**generator.  Reapplies your template without losing your changes
 
 [//]: # ( ns__custom_start toc )
 <!-- toc -->
-* [<a name="clipboard-why"></a>:clipboard: Why](#a-nameclipboard-whyaclipboard-why)
-* [<a name="white_check_mark-steps"></a>:white_check_mark: Steps](#a-namewhite_check_mark-stepsawhite_check_mark-steps)
-* [<a name="bulb-a-funny-sample"></a>:bulb: A Funny Sample](#a-namebulb-a-funny-sampleabulb-a-funny-sample)
-* [<a name="wrench-usage"></a>:wrench: Usage](#a-namewrench-usageawrench-usage)
-* [<a name="zap-commands"></a>:zap: Commands](#a-namezap-commandsazap-commands)
-* [<a name="heavy_exclamation_mark-help"></a>:heavy_exclamation_mark: Help](#a-nameheavy_exclamation_mark-helpaheavy_exclamation_mark-help)
-<!-- tocstop -->
 * [:clipboard: Why](#clipboard-why)
 * [:white_check_mark: Steps](#white_check_mark-steps)
 * [:bulb: A Funny Sample](#bulb-a-funny-sample)
@@ -106,54 +99,6 @@ $ geenee COMMAND
 running command...
 $ geenee (-v|--version|version)
 geenee/0.1.21 win32-x64 node-v14.15.5
-$ geenee --help [COMMAND]
-USAGE
-  $ geenee COMMAND
-...
-```
-<!-- usagestop -->
-```sh-session
-$ npm install -g geenee
-$ geenee COMMAND
-running command...
-$ geenee (-v|--version|version)
-geenee/0.1.20 win32-x64 node-v14.15.5
-$ geenee --help [COMMAND]
-USAGE
-  $ geenee COMMAND
-...
-```
-<!-- usagestop -->
-```sh-session
-$ npm install -g geenee
-$ geenee COMMAND
-running command...
-$ geenee (-v|--version|version)
-geenee/0.1.19 win32-x64 node-v14.15.5
-$ geenee --help [COMMAND]
-USAGE
-  $ geenee COMMAND
-...
-```
-<!-- usagestop -->
-```sh-session
-$ npm install -g geenee
-$ geenee COMMAND
-running command...
-$ geenee (-v|--version|version)
-geenee/0.1.18 win32-x64 node-v14.15.5
-$ geenee --help [COMMAND]
-USAGE
-  $ geenee COMMAND
-...
-```
-<!-- usagestop -->
-```sh-session
-$ npm install -g geenee
-$ geenee COMMAND
-running command...
-$ geenee (-v|--version|version)
-geenee/0.1.17 linux-x64 node-v15.8.0
 $ geenee --help [COMMAND]
 USAGE
   $ geenee COMMAND
